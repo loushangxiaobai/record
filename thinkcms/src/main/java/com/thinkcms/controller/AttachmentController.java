@@ -30,7 +30,7 @@ public class AttachmentController {
 	public String index(Model model) {
 		return "attachment/index";
 	}
-
+//上传文件
 	@RequiresPermissions({ "attachment/list" })
 	@RequestMapping(value = "/list", method = RequestMethod.POST)
 	public String list(String startDate, String endDate,String type, ReqDto req, Model model) {
