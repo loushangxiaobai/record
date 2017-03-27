@@ -1,0 +1,29 @@
+package ${package};
+
+import java.util.List;
+import java.util.Date;
+
+import com.thinkcms.entity.${className};
+import com.thinkcms.support.PageDto;
+
+/**
+ * @ClassName: ${className}Dao
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ * @author zhangp
+ * 
+ */
+public interface ${className}Dao {
+
+	public ${className} saveOrUpdate(${className} article);
+
+	public void del(Long id);
+
+	public void delBatch(String ids);
+
+	public ${className} get${className}(Long id);
+
+	public List<${className}> findAll();
+
+	public PageDto<${className}> findList(<#list properties as pro><#if pro.condition!=""> ${pro.type} ${pro.name}, </#if> </#list>Date startDate,Date endDate,Integer pageNo, Integer pageSize);
+
+}

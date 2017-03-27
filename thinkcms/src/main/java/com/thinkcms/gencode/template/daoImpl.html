@@ -1,0 +1,81 @@
+package  ${package};  
+
+import java.util.List;
+import java.util.Date;
+
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+
+import com.thinkcms.entity.${className};
+import com.thinkcms.support.PageDto;
+
+/**
+ * @ClassName: ${className}DaoImpl
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ * @author zhangp
+ * 
+ */
+@Component("<@lowerFC>${className}</@lowerFC>Dao")
+public class ${className}DaoImpl extends BaseDao implements ${className}Dao {
+
+	public ${className} saveOrUpdate(final ${className} entity) {
+		entity.setModifyDate(new Date());
+		super.saveOrUpdate(entity);
+		return entity;
+	}
+
+	public void del(Long id) {
+		String	sql = "delete from zq_<@lowerFC>${className}</@lowerFC> where id=?";
+		super.sqlUpdate(sql, id);
+	}
+
+	public void delBatch(String ids) {
+		// 删除该数据
+		String sql = "delete from zq_<@lowerFC>${className}</@lowerFC> where id in  (" + ids + ")";
+		super.sqlUpdate(sql);
+	}
+
+	public List<${className}> findAll() {
+		return super.find(${className}.class);
+	}
+
+	public PageDto<${className}> findList(<#list properties as pro><#if pro.condition!=""> ${pro.type} ${pro.name}, </#if> </#list>Date startDate,Date endDate,Integer pageNo, Integer pageSize){
+		DetachedCriteria dc = DetachedCriteria.forClass(${className}.class);
+		
+		
+	<#list properties as pro>  
+		<#if pro.condition!="">
+	  	if (!StringUtils.isEmpty(${pro.name})) {
+	  		<#if pro.condition=="eq" >
+			dc.add(Restrictions.eq("${pro.name}", ${pro.name}));
+			</#if>
+			<#if pro.condition=="like"> 
+			dc.add(Restrictions.like("${pro.name}", ${pro.name}, MatchMode.ANYWHERE));
+			</#if>
+		}
+		</#if>
+	</#list>  
+		if (startDate != null) {
+			dc.add(Restrictions.ge("modifyDate", startDate));
+		}
+		if (endDate != null) {
+			dc.add(Restrictions.le("modifyDate", endDate));
+		}
+		dc.addOrder(Order.desc("modifyDate"));
+		/* 一定先取count值 */
+		Long total = super.countByCriteria(dc);
+		List<${className}> list = super.findByCriteria(dc, (pageNo - 1) * pageSize,
+				pageSize);
+		return new PageDto<${className}>(total, pageNo, pageSize, list);
+	}
+
+	public ${className} get${className}(Long id) {
+		return super.get(${className}.class, id);
+	}
+
+
+}

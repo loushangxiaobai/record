@@ -1,0 +1,60 @@
+package  ${package};  
+  
+//这个地方可以事先定义好需要的类   
+import  java.util.Date;  
+  
+import  java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Type;  
+/** 
+ * @ClassName: ${className} 
+ * @Description: TODO(${className}实体类) 
+ * @author zhangp 
+ *  
+ */  
+@Entity
+@Table(name = "zq_<@lowerFC>${className}</@lowerFC>")
+public  class ${className}  implements  Serializable{  
+private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
+	private Long id;   
+	@Column(name = "modify_date")
+	private Date modifyDate;   
+	<#list properties as pro>
+		@Column(name = "${pro.name}")  
+	    private  ${pro.type} ${pro.name};  
+	</#list>  
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	} 
+	public Date getModifyDate() {
+		return modifyDate;
+	}
+
+	public void setModifyDate(Date modifyDate) {
+		this.modifyDate = modifyDate;
+	}
+<#list properties as pro>  
+    public void set<@upperFC>${pro.name}</@upperFC>(${pro.type} ${pro.name}){  
+        this.${pro.name}=${pro.name};  
+    }  
+      
+    public ${pro.type} get<@upperFC>${pro.name}</@upperFC>(){  
+        return   this.${pro.name};  
+    }  
+</#list>  
+} 

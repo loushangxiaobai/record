@@ -1,0 +1,57 @@
+package com.thinkcms.service;
+
+import java.util.List;
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.thinkcms.dao.${className}Dao;
+import com.thinkcms.entity.${className};
+import com.thinkcms.support.PageDto;
+
+
+/** 
+ * @ClassName: ${className}ServiceImpl 
+ * @Description: TODO(这里用一句话描述这个类的作用) 
+ * @author zhangp 
+ *  
+ */
+@Service("<@lowerFC>${className}</@lowerFC>Service")
+public class ${className}ServiceImpl implements ${className}Service {
+
+	@Autowired
+	private ${className}Dao <@lowerFC>${className}</@lowerFC>Dao;
+
+	@Transactional
+	public ${className} saveOrUpdate(${className} entity) {
+		return <@lowerFC>${className}</@lowerFC>Dao.saveOrUpdate(entity);
+	}
+
+	@Transactional
+	public void del(Long id) {
+		<@lowerFC>${className}</@lowerFC>Dao.del(id);
+	}
+
+	@Transactional
+	public void delBatch(String ids) {
+		<@lowerFC>${className}</@lowerFC>Dao.delBatch(ids);
+	}
+
+	@Transactional
+	public List<${className}> findAll() {
+		return <@lowerFC>${className}</@lowerFC>Dao.findAll();
+	}
+
+	@Transactional
+	public PageDto<${className}> findList(<#list properties as pro><#if pro.condition!=""> ${pro.type} ${pro.name}, </#if> </#list>Date startDate,Date endDate,Integer pageNo, Integer pageSize) {
+		return <@lowerFC>${className}</@lowerFC>Dao.findList(<#list properties as pro><#if pro.condition!="">${pro.name},</#if> </#list>startDate,endDate,pageNo,pageSize);
+	}
+
+	@Transactional
+	public ${className} get${className}(Long id) {
+		return <@lowerFC>${className}</@lowerFC>Dao.get${className}(id);
+	}
+
+}
