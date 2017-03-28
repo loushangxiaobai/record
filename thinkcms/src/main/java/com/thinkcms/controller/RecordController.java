@@ -1,6 +1,8 @@
 package com.thinkcms.controller;
 
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -73,6 +75,15 @@ public class RecordController {
 			return new Result(false, e);
 		}
 		return new Result();
+	}
+	
+	@RequiresPermissions({ "record/add" })
+	@RequestMapping(value = "/upload", method = RequestMethod.GET)
+	public String upload( Model model,HttpServletRequest request) {
+		String id=request.getParameter("id");
+		request.getSession().setAttribute("id", id);
+		model.addAttribute("", id);
+		return "record/add";
 	}
 
 }

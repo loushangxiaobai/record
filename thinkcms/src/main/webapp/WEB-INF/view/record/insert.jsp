@@ -671,7 +671,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'><span lang=EN-US></span>
-  <input type="text" name="hezuoxieyiUrl" readonly="readonly"  onclick="openWindow('record/upload','上传附件');" id="heuoxieyiUrl" placeholder="点击上传加盟商合作协议书" style="width: 300px">
+  <input type="text" name="hezuoxieyiUrl" readonly="readonly"  onclick="openWindow('record/upload?id=hezuoxieyiUrl','上传附件');" id="heuoxieyiUrl" placeholder="点击上传加盟商合作协议书" style="width: 300px">
   <span
   lang=EN-US><o:p></o:p></span></span></p>
   </td>
@@ -994,18 +994,18 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'><input type="checkbox" name="wlbTuiGuang" value="当地">  当地<span lang=EN-US>58</span>同城 
-  <input type="checkbox" name="wlbTuiGuang" value="当地"> 当地自媒体推广
-  <input type="checkbox" name="wlbtuiguang" value="当地"> <span class=GramE>美团</span> 
-  <input type="checkbox" name="wlbtuiguang" value="当地"> 百度地图
-   <input type="checkbox" name="wlbTuiGuang" value="当地"> 百度糯米团 
-   <input type="checkbox" name="wlbTuiGuang" value="当地"> 官方线上平台
-   <input type="checkbox" name="wlbTuiGuang" value="当地"> 门店定位查询 
-   <input type="checkbox" name="wlbTuiGuang" value="当地"> <span lang=EN-US>1</span>小时内部维修图纸
-  <input type="checkbox" name="wlbTuiGuang" value="当地"> 上门服务培训 
-  <input type="checkbox" name="wlbTuiGuang" value="当地"> 上门装备物料
-   <input type="checkbox" name="wlbTuiGuang" value="当地">线下地<span class=GramE>推活动</span> 
-  <input type="checkbox" name="wlbTuiGuang" value="当地"> 新<span class=GramE>浪微博</span>
-  <input type="checkbox" name="wlbTuiGuang" value="当地"> 其他： <input type="text" name=""><span lang=EN-US><o:p></o:p></span></span></p>
+  <input type="checkbox" name="wlbTuiGuang" value="当地自媒体推广"> 当地自媒体推广
+  <input type="checkbox" name="wlbtuiguang" value="美团"> <span class=GramE>美团</span> 
+  <input type="checkbox" name="wlbtuiguang" value="百度地图"> 百度地图
+   <input type="checkbox" name="wlbTuiGuang" value="百度糯米团 "> 百度糯米团 
+   <input type="checkbox" name="wlbTuiGuang" value="官方线上平台"> 官方线上平台
+   <input type="checkbox" name="wlbTuiGuang" value="门店定位查询 "> 门店定位查询 
+   <input type="checkbox" name="wlbTuiGuang" value="1小时内部维修图纸"> <span lang=EN-US>1</span>小时内部维修图纸
+  <input type="checkbox" name="wlbTuiGuang" value="上门服务培训 "> 上门服务培训 
+  <input type="checkbox" name="wlbTuiGuang" value="上门装备物料"> 上门装备物料
+   <input type="checkbox" name="wlbTuiGuang" value="线下地">线下地推活动<span class=GramE>推活动</span> 
+  <input type="checkbox" name="wlbTuiGuang" value="新浪微博"> 新<span class=GramE>浪微博</span>
+  <input type="checkbox" name="wlbTuiGuang" value="其他"> 其他： <input type="text" name=""><span lang=EN-US><o:p></o:p></span></span></p>
   </td> 
  </tr> 
  <tr style='mso-yfti-irow:23;page-break-inside:avoid;height:19.85pt'>

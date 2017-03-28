@@ -47,8 +47,7 @@
 	<!-- content end -->
 	<script type="text/javascript">
 		function doClose() {
-			/* parent.query(); */
-			
+			//parent.query();
 			parent.layer.closeAll();
 		}
 		$(function() {

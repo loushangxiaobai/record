@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
 
@@ -57,17 +58,22 @@ public class CommonController {
 	 * 如果想上传多个文件,那么这里就要用MultipartFile[]类型来接收文件,并且要指定@RequestParam注解
 	 * 上传多个文件时,前台表单中的所有<input
 	 * type="file"/>的name都应该是myfiles,否则参数里的myfiles无法获取到所有上传的文件
+	 * @param id  上传时候输入框ID
 	 */
 	@ResponseBody
 	@RequestMapping(value = "common/fileUpload")
 	public Object fileUpload(@RequestParam MultipartFile[] qqfile,
 			HttpServletRequest request) throws IOException {
 		if (qqfile!=null&&qqfile.length>0) {
-			 String url="";
+			ArrayList<String> list= new ArrayList<String>();
+			 String url=request.getSession().getServletContext().getRealPath("/")+ "upload/";
 			for(int i=0;i<qqfile.length;i++){
 				 MultipartFile file = qqfile[i];
-				 url =saveFile(file, request);
+				 url+=saveFile(file, request);
+				 list.add(url);
 			}
+			String id= (String) request.getSession().getAttribute("id");
+			request.getSession().setAttribute(id, list);
 			return new Result(true, url);
 		} else {
 			return new Result(false, "请选择文件");
