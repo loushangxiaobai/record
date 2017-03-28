@@ -181,7 +181,7 @@ style='font-size:14.0pt;mso-bidi-font-size:11.0pt;font-family:黑体'>小时项�
 lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></span></b></p>
 </div>
 <div id="tablediv" style="text-align: center; margin: 0 auto; margin-left: 30%;margin-top: 20px;width: 800px;height: 1200px;">
-  <form  id="form">
+  <form  id="form" enctype="multipart/form-data">
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 align=left
  style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
  mso-table-overlap:never;mso-yfti-tbllook:1184;mso-table-lspace:9.0pt;
@@ -235,20 +235,20 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   </td> 
  </tr>
   <tr style='mso-yfti-irow:1'>
-  <td width=112 valign=top style='width:83.8pt;border-top:none;border-left:
+  <td width=112 valign=middle style='width:83.8pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
+  <p class=MsoNormal style='line-height:100%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'>门店详细地址：<span lang=EN-US><o:p></o:p></span></span></p>
   </td>
-  <td width=567 colspan=13 valign=top style='width:15.0cm;border-top:none;
+  <td width=567 colspan=13 valign=middle style='width:15.0cm;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
+  <p class=MsoNormal style='line-height:100%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span lang=EN-US style='font-family:黑体'><input type="text" style="width: 550px;" name="storeAddr" id="storeAddr"><o:p>&nbsp;</o:p></span></p>
@@ -297,12 +297,12 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
+  <p class=MsoNormal style='line-height:100%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'>门店法人姓名：<span lang=EN-US><o:p></o:p></span></span></p>
   </td>
-  <td width=130 colspan=4 valign=top style='width:97.25pt;border-top:none;
+  <td width=130 colspan=4 valign=middle style='width:97.25pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
@@ -315,12 +315,12 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
+  <p class=MsoNormal style='line-height:100%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'>手机号码：<span lang=EN-US><o:p></o:p></span></span></p>
   </td>
-  <td width=130 colspan=2 valign=top style='width:97.75pt;border-top:none;
+  <td width=130 colspan=2 valign=middle style='width:97.75pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
@@ -338,7 +338,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'>微信号：<span lang=EN-US><o:p></o:p></span></span></p>
   </td>
-  <td width=148 valign=top style='width:111.0pt;border-top:none;border-left:
+  <td width=148 valign=middle style='width:111.0pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
@@ -358,7 +358,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'>邮箱地址：<span lang=EN-US><o:p></o:p></span></span></p>
   </td>
-  <td width=199 colspan=5 valign=top style='width:149.1pt;border-top:none;
+  <td width=199 colspan=5 valign=middle style='width:149.1pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
@@ -377,7 +377,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   exactly'><span lang=EN-US style='font-family:黑体'>QQ</span><span
   style='font-family:黑体'>号码<span lang=EN-US>/</span>其他联系方式：<span lang=EN-US><o:p></o:p></span></span></p>
   </td>
-  <td width=208 colspan=3 valign=top style='width:155.65pt;border-top:none;
+  <td width=208 colspan=3 valign=middle style='width:155.65pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
@@ -397,7 +397,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'>门店店长姓名：<span lang=EN-US><o:p></o:p></span></span></p>
   </td>
-  <td width=130 colspan=4 valign=top style='width:97.25pt;border-top:none;
+  <td width=130 colspan=4 valign=middle style='width:97.25pt; margin-top: 15px;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
@@ -406,7 +406,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span lang=EN-US style='font-family:黑体'><input type="text" name="storePersonName" id="storePersonName" style="width: 110px" ><o:p>&nbsp;</o:p></span></p>
   </td>
-  <td width=84 colspan=3 valign=top style='width:63.1pt;border-top:none;
+  <td width=84 colspan=3 valign=middle style='width:63.1pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
@@ -415,7 +415,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'>手机号码：<span lang=EN-US><o:p></o:p></span></span></p>
   </td>
-  <td width=130 colspan=2 valign=top style='width:97.75pt;border-top:none;
+  <td width=130 colspan=2 valign=middle style='width:97.75pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
@@ -424,7 +424,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span lang=EN-US style='font-family:黑体'><input type="text" name="storePersonPhone" id="storePersonPhone" style="width: 110px" ><o:p>&nbsp;</o:p></span></p>
   </td>
-  <td width=75 colspan=3 valign=top style='width:56.15pt;border-top:none;
+  <td width=75 colspan=3 valign=middle style='width:56.15pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
@@ -433,7 +433,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'>微信号：<span lang=EN-US><o:p></o:p></span></span></p>
   </td>
-  <td width=148 valign=top style='width:111.0pt;border-top:none;border-left:
+  <td width=148 valign=middle style='width:111.0pt;border-top:none;border-left:
   none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
@@ -481,7 +481,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <p class=MsoNormal align=right style='text-align:right;line-height:150%;
   mso-element:frame;mso-element-frame-hspace:9.0pt;mso-element-wrap:around;
   mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:column;
-  mso-element-top:.05pt;mso-height-rule:exactly'><span style='font-family:黑体'> <input type="text" name="engineerNum" id="engineerNum" style="width: 80px;margin-right: 50px"><input type="button" style="width: 100px" value="上传附录" >   <span
+  mso-element-top:.05pt;mso-height-rule:exactly'><span style='font-family:黑体'> <input type="text" name="engineerNum" id="engineerNum" style="width: 100px; margin-right: 120px;"><input type="hidden" readonly="readonly" style="width: 50px;margin-left: 80px" placeholder="点击上传附录" >   <span
   lang=EN-US><o:p></o:p></span></span></p>
   </td>
  </tr> 
@@ -521,7 +521,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'>是否使用其他订单平台：<span lang=EN-US><o:p></o:p></span></span></p>
   </td>
-  <td width=517 colspan=11 valign=top style='width:387.85pt;border-top:none;
+  <td width=517 colspan=11  valign=middle style='width:387.85pt;text-align:center; border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
@@ -670,9 +670,9 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span style='font-family:黑体'><span lang=EN-US>1</span>、加盟商合作协议书
-  <input type="hidden" name="hezuoxieyiUrl" id="heuoxieyiUrl">
-   <input type="button" value="上传"><span
+  exactly'><span style='font-family:黑体'><span lang=EN-US></span>
+  <input type="text" name="hezuoxieyiUrl" readonly="readonly"  onclick="openWindow('record/upload','上传附件');" id="heuoxieyiUrl" placeholder="点击上传加盟商合作协议书" style="width: 300px">
+  <span
   lang=EN-US><o:p></o:p></span></span></p>
   </td>
   <td width=282 colspan=5 valign=top style='width:211.4pt;border-top:none;
@@ -682,11 +682,11 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span lang=EN-US style='font-family:黑体'>2</span><span
-  style='font-family:黑体'>、 收据   
-  <input type="hidden" name="shoujuUrl" id="shoujuUrl">
-  <input type="button" value="上传"> （□加盟费<span
-  lang=EN-US>/</span>□保证金）<span lang=EN-US><o:p></o:p></span></span></p>
+  exactly'><span lang=EN-US style='font-family:黑体'></span><span
+  style='font-family:黑体'>
+  <input type="text" name="shoujuUrl" id="shoujuUrl" placeholder="点击上传收据" style="width: 250px">
+   <span
+  lang=EN-US></span><span lang=EN-US><o:p></o:p></span></span></p>
   </td>
  </tr>
  <tr style='mso-yfti-irow:14'>
