@@ -20,6 +20,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -59,22 +60,46 @@ public class CommonController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "common/fileUpload")
-	public Object fileUpload(@RequestParam MultipartFile qqfile,
+	public Object fileUpload(@RequestParam MultipartFile[] qqfile,
 			HttpServletRequest request) throws IOException {
-		if (qqfile.isEmpty()) {
-			return new Result(false, "请选择文件");
-		} else {
-			String url = QiniuFileUtil.upload(qqfile);
-			Attachment attachment = new Attachment();
-			attachment.setCreateDate(new Date());
-			attachment.setFileName(qqfile.getOriginalFilename());
-			attachment.setFileType(qqfile.getContentType());
-			attachment.setFileSize((float)qqfile.getSize()/1024);
-			attachment.setUrl(url);
-			attachmentService.saveOrUpdate(attachment);
+		if (qqfile!=null&&qqfile.length>0) {
+			 String url="";
+			for(int i=0;i<qqfile.length;i++){
+				 MultipartFile file = qqfile[i];
+				 url =saveFile(file, request);
+			}
 			return new Result(true, url);
+		} else {
+			return new Result(false, "请选择文件");
 		}
 	}
+	
+	
+	
+	private String saveFile(MultipartFile file,HttpServletRequest request){
+		if(!file.isEmpty()){
+			try{
+				String ctxPath = request.getSession().getServletContext().getRealPath("/")+ "upload/";
+				File dirPath = new File(ctxPath);
+				if (!dirPath.exists()) {
+					dirPath.mkdir();
+				}
+				String filename = file.getOriginalFilename();
+				File uploadFile = new File(ctxPath + filename);
+		        FileCopyUtils.copy(file.getBytes(), uploadFile);
+				//return filePath;
+		        return uploadFile.getName();
+			}catch (Exception e){
+				e.printStackTrace();
+				
+			}
+		}
+		return null;
+		
+		
+	}
+	
+	
 
 	/**
 	 * 文件删除
