@@ -40,5 +40,11 @@ public class RecordServiceImpl implements RecordService{
 		
 	}
 
+	@Transactional
+	public Record getRecord(Long id) {
+		// TODO Auto-generated method stub
+		return recordDao.getRecord(id);
+	}
+
 
 }

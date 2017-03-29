@@ -214,7 +214,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span lang=EN-US style='font-family:黑体'><input type="text" name="storePhone" id="storePhone"><o:p>&nbsp;</o:p></span></p>
+  exactly'><span lang=EN-US style='font-family:黑体'><input type="text" name="storePhone" id="storePhone" required="required"><o:p>&nbsp;</o:p></span></p>
   </td>
 
  <td width=130 colspan=2 valign=top style='width:97.75pt;border:solid windowtext 1.0pt;
@@ -671,7 +671,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'><span lang=EN-US></span>
-  <input type="text" name="hezuoxieyiUrl" readonly="readonly"  onclick="openWindow('record/upload?id=hezuoxieyiUrl','上传附件');" id="heuoxieyiUrl" placeholder="点击上传加盟商合作协议书" style="width: 300px">
+  <input type="text" name="hezuoxieyiUrl" readonly="readonly"  onclick="openWindow('record/upload?id=heuoxieyiUrl','上传附件');" id="heuoxieyiUrl" placeholder="点击上传加盟商合作协议书" style="width: 300px">
   <span
   lang=EN-US><o:p></o:p></span></span></p>
   </td>
@@ -684,7 +684,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span lang=EN-US style='font-family:黑体'></span><span
   style='font-family:黑体'>
-  <input type="text" name="shoujuUrl" id="shoujuUrl" placeholder="点击上传收据" style="width: 250px">
+  <input type="text" name="shoujuUrl" id="shoujuUrl" placeholder="点击上传收据" onclick="openWindow('record/upload?id=shoujuUrl','上传附件');" style="width: 250px">
    <span
   lang=EN-US></span><span lang=EN-US><o:p></o:p></span></span></p>
   </td>
@@ -697,10 +697,10 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span style='font-family:黑体'><span lang=EN-US>3</span>、法人身份证复印件（正<span
-  lang=EN-US>/</span>反面）
-  <input type="hidden" name="idCardUrl" id="idCardUrl">
-  <input type="button" value="上传"><span lang=EN-US><o:p></o:p></span></span></p>
+  exactly'><span style='font-family:黑体'><span lang=EN-US></span><span
+  lang=EN-US></span>
+  <input type="text" readonly="readonly"  onclick="openWindow('record/upload?id=idCardUrl','上传附件');" name="idCardUrl" id="idCardUrl" placeholder="点击上传法人身份证正反面" style="width: 300px;">
+  <span lang=EN-US><o:p></o:p></span></span></p>
   </td>
   <td width=282 colspan=5 valign=top style='width:211.4pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -709,10 +709,10 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span style='font-family:黑体'><span lang=EN-US>4</span>、法人手持身份证照片（正<span
-  lang=EN-US>/</span>反面）
-  <input type="hidden" name="idCardInHandUrl" id="idCardInHandUrl">
-  <input type="button" value="上传"><span lang=EN-US><o:p></o:p></span></span></p>
+  exactly'><span style='font-family:黑体'><span lang=EN-US></span><span
+  lang=EN-US></span>
+  <input type="text" name="idCardInHandUrl" id="idCardInHandUrl" placeholder="点击上传法人手持身份证照片正反面" style="width: 250px;" readonly="readonly" onclick="openWindow('record/upload?id=idCardInHandUrl','上传附件');">
+  <span lang=EN-US><o:p></o:p></span></span></p>
   </td>
  </tr>
  <tr style='mso-yfti-irow:15'>
@@ -723,9 +723,9 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span style='font-family:黑体'><span lang=EN-US>5</span>、维修工程师登记表   
-  <input type="hidden" name="engineerUrl" id="engineerUrl">
-   <input type="button" value="上传"><span
+  exactly'><span style='font-family:黑体'><span lang=EN-US></span>
+  <input type="text" name="engineerUrl" id="engineerUrl" placeholder="点击上传维修工程师登记表" style="width: 300px;" readonly="readonly" onclick="openWindow('record/upload?id=engineerUrl','上传附件');" >
+   <span
   lang=EN-US><o:p></o:p></span></span></p>
   </td>
   <td width=282 colspan=5 valign=top style='width:211.4pt;border-top:none;
@@ -735,10 +735,10 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span lang=EN-US style='font-family:黑体'>6</span><span
-  style='font-family:黑体'>、门<span class=GramE>店高清横屏</span>照片（按附件要求）
-  <input type="hidden" name="StoreImageUrl" id="StoreImageUrl">
-  <input type="button" value="上传"><span
+  exactly'><span lang=EN-US style='font-family:黑体'></span><span
+  style='font-family:黑体'><span class=GramE></span>
+  <input type="text" name="storeImage" id="storeImage" placeholder="点击上传店高清横屏照片" readonly="readonly" style="width: 250px;" onclick="openWindow('record/upload?id=storeImage','上传附件');">
+  <span
   lang=EN-US><o:p></o:p></span></span></p>
   </td>
  </tr>
@@ -750,9 +750,9 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span style='font-family:黑体'><span lang=EN-US>7</span>、其他资料文件：
-  <input type="hidden" name="otherFileUrl" id="otherFileUrl">
-  <input type="button"  value="上传"><span
+  exactly'><span style='font-family:黑体'><span lang=EN-US></span>
+  <input type="text" name="otherFileUrl" id="otherFileUrl" placeholder="点击上传其他资料文件" readonly="readonly" style="width: 300px;" onclick="openWindow('record/upload?id=otherFileUrl','上传附件');">
+<span
   lang=EN-US><o:p></o:p></span></span></p>
   </td>
  </tr> 
@@ -1192,5 +1192,12 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
 				}
 			});
 		}
+		
+		function assignment(inpuid,inputvalue) {
+			var inputid="#"+inpuid;
+			$(inputid).val(inputvalue);
+		}
+		
+		
 	</script>
 </html>

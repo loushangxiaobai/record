@@ -60,20 +60,19 @@ public class CommonController {
 	 * type="file"/>的name都应该是myfiles,否则参数里的myfiles无法获取到所有上传的文件
 	 * @param id  上传时候输入框ID
 	 */
+	@SuppressWarnings("unchecked")
 	@ResponseBody
 	@RequestMapping(value = "common/fileUpload")
-	public Object fileUpload(@RequestParam MultipartFile[] qqfile,
+	public Object fileUpload(@RequestParam MultipartFile qqfile[],
 			HttpServletRequest request) throws IOException {
 		if (qqfile!=null&&qqfile.length>0) {
-			ArrayList<String> list= new ArrayList<String>();
-			 String url=request.getSession().getServletContext().getRealPath("/")+ "upload/";
+			String url=request.getSession().getServletContext().getRealPath("/")+ "upload/";
 			for(int i=0;i<qqfile.length;i++){
 				 MultipartFile file = qqfile[i];
 				 url+=saveFile(file, request);
-				 list.add(url);
 			}
-			String id= (String) request.getSession().getAttribute("id");
-			request.getSession().setAttribute(id, list);
+			//String id= (String) request.getSession().getAttribute("id");
+			
 			return new Result(true, url);
 		} else {
 			return new Result(false, "请选择文件");

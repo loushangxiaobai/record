@@ -128,7 +128,7 @@
 							<div class="am-btn-toolbar">
 								<div class="am-btn-group am-btn-group-xs">
 									<button type="button" class="am-btn am-btn-default am-text-secondary"
-										onclick="openWindow('role/edit?id=${item.id}','权限编辑');" style="float: left;">
+										onclick="openWindow('record/edit?id=${item.id}','权限编辑');" style="float: left;">
 										<span class="am-icon-pencil-square-o"></span> 编辑
 									</button>
 									<button type="button" class="am-btn am-btn-default am-text-danger"

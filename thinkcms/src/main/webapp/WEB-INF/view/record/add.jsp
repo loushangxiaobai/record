@@ -33,6 +33,7 @@
 					</form>
 				</div>
 				<br>
+				<input type="hidden" value="${inputid}" id="inputid">
 				<div class="am-u-sm-3 am-fr">
 					<button type="button" class="am-btn am-btn-primary "
 						onclick="doClose();">完成</button>
@@ -46,9 +47,14 @@
 
 	<!-- content end -->
 	<script type="text/javascript">
+	
+	   var fileName="";
+	  // var inputid=${inputid};
 		function doClose() {
-			//parent.query();
+			var inputid=$("#inputid").val();
+			parent.assignment(inputid,fileName);
 			parent.layer.closeAll();
+			
 		}
 		$(function() {
 			$('#fine-uploader-gallery')
@@ -66,8 +72,13 @@
 								},
 								callbacks : {
 									onComplete : function(id, name, response) {
-										//doChoose(response.obj, '');
-										alert(name);
+										
+										if(fileName==""){
+											fileName+=name;
+										}else{
+											fileName+=";"+name;
+										}
+										
 									}
 								}
 							});

@@ -24,7 +24,6 @@ public class RecordDaoImpl extends BaseDao implements RecordDao{
 
 	public Record saveOrUpdate(final Record record) {
 		super.saveOrUpdate(record);
-		System.out.println("*-*-*-*-*");
 		return record;
 	}
 
@@ -67,6 +66,12 @@ public class RecordDaoImpl extends BaseDao implements RecordDao{
 				String	sql = "delete from sys_record where id in  (" + ids + ")";
 				super.sqlUpdate(sql);
 		
+	}
+
+	@Override
+	public Record getRecord(Long id) {
+		// TODO Auto-generated method stub
+		return super.get(Record.class, id);
 	}
 
 }

@@ -17,4 +17,6 @@ public interface RecordService {
    public void del(Long id);
    
    public void delBatch(String ids);
+   
+   public Record getRecord(Long id);
 }

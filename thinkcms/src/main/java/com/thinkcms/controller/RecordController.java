@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.thinkcms.entity.Article;
 import com.thinkcms.entity.Record;
 import com.thinkcms.service.RecordService;
 import com.thinkcms.support.ReqDto;
@@ -54,7 +55,7 @@ public class RecordController {
 	@RequiresPermissions({ "record/add" })
 	@ResponseBody
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public Object add(Record record,Model model) {
+	public Object add(Record record,Model model,HttpServletRequest request) {
 		try {
 			recordService.saveOrUpdate(record);
 		} catch (Exception e) {
@@ -82,8 +83,23 @@ public class RecordController {
 	public String upload( Model model,HttpServletRequest request) {
 		String id=request.getParameter("id");
 		request.getSession().setAttribute("id", id);
-		model.addAttribute("", id);
+		model.addAttribute("inputid", id);
 		return "record/add";
+	}
+	
+	
+	@RequiresPermissions({ "record/edit" })
+	@RequestMapping(value = "/edit", method = RequestMethod.GET)
+	public String toEdit(Long id, Model model) {
+		try {
+			Record record = recordService.getRecord(id);
+			model.addAttribute("entity", record);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "common/error";
+		}
+		return "record/edit";
 	}
 
 }
