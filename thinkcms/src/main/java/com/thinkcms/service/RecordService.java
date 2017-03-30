@@ -1,5 +1,7 @@
 package com.thinkcms.service;
 
+import java.util.List;
+
 import com.thinkcms.entity.Record;
 import com.thinkcms.support.PageDto;
 
@@ -14,9 +16,11 @@ public interface RecordService {
    public PageDto<Record> findList(Long categoryId,String title, String tag, String remark,
 			Integer pageNo, Integer pageSize);
    
-   public void del(Long id);
+   public void del(Integer id);
    
    public void delBatch(String ids);
    
-   public Record getRecord(Long id);
+   public Record getRecord(Integer id);
+   
+   public List<Record> findById(String ids);
 }

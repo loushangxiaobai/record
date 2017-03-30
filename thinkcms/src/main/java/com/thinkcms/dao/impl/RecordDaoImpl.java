@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import com.thinkcms.dao.BaseDao;
 import com.thinkcms.dao.RecordDao;
-import com.thinkcms.entity.Article;
 import com.thinkcms.entity.Record;
 import com.thinkcms.support.PageDto;
 /**
@@ -52,7 +51,7 @@ public class RecordDaoImpl extends BaseDao implements RecordDao{
 	}
 
 	@Override
-	public void del(Long id) {
+	public void del(Integer id) {
 		// 首先把与permission关联的相关表的数据删掉
 
 				String	sql = "delete from sys_record where id=?";
@@ -69,9 +68,17 @@ public class RecordDaoImpl extends BaseDao implements RecordDao{
 	}
 
 	@Override
-	public Record getRecord(Long id) {
+	public Record getRecord(Integer id) {
 		// TODO Auto-generated method stub
 		return super.get(Record.class, id);
+	}
+
+	@Override
+	public List<Record> findById(String ids) {
+		// TODO Auto-generated method stub
+		String sql= "select * from sys_record where id in (" + ids + ")";
+		List<Record> list=  super.sqlQuery(Record.class, sql);
+		return list;
 	}
 
 }

@@ -26,10 +26,10 @@
 	</h1>
 	<form class="form-signin" role="form" action="login" method="post">
 	<div class="layui-user-icon larry-login">
-		 <input type="text" placeholder="账号" name="userName" class="login_txtbx"/>
+		 <input type="text" placeholder="账号" value="xiaobai" name="userName" class="login_txtbx"/>
 	</div>
 	<div class="layui-pwd-icon larry-login">
-		 <input type="password" placeholder="密码" name="password" class="login_txtbx"/>
+		 <input type="password" placeholder="密码" value="123456" name="password" class="login_txtbx"/>
 	</div>
 	
     <div class="layui-submit larry-login">

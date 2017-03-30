@@ -29,5 +29,11 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/报价系统相关/poi-3.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/报价系统相关/poi-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/报价系统相关/poi-excelant-3.9-beta1-20120924.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/报价系统相关/poi-ooxml-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/报价系统相关/poi-ooxml-schemas-3.9-beta1-20120924.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/报价系统相关/poi-scratchpad-3.9-beta1-20120924.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

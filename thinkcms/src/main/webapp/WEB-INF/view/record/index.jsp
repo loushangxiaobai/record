@@ -24,7 +24,7 @@
 						<div class="am-btn-toolbar">
 							<div class="am-btn-group am-btn-group-xs">
 								<button type="button" class="am-btn am-btn-default"
-									onclick="openWindow('record/add','角色新增');">
+									onclick="exportByid();">
 									<span class="am-icon-plus"></span> 导出
 								</button>
 								<button type="button" class="am-btn am-btn-default"
@@ -90,7 +90,6 @@
 				  time: 0 //不自动关闭
 				  ,btn: ['确定', '取消']
 				  ,yes: function(index){
-					 
 					  $.ajax({
 							url : 'record/del',
 							type : 'post',
@@ -127,6 +126,32 @@
 					document.getElementById($(obj).attr("id")).checked);
 			$(obj).attr("checked",
 					document.getElementById($(obj).attr("id")).checked);
+		}
+		
+		
+		function exportByid(id) {
+			if (!id) {
+				id = "";
+				$("[name='checkitem'][checked]").each(function(index) {
+					id += $(this).val();
+					if (index < $("[name='checkitem'][checked]").length - 1) {
+						id += ",";
+					}
+				});
+				if(id.length<1){
+					layer.msg("请选择要导出的选项");
+					return;
+				}
+			}
+			layer.msg('你确定要导出么？', {
+				  time: 0 //不自动关闭
+				  ,btn: ['确定', '取消']
+				  ,yes: function(index){
+					 location.href="record/export?ids="+id;
+					 layer.msg("导出成功！");
+				  }//end yes function
+				});//end layer.msg
+			
 		}
 	</script>
 </body>

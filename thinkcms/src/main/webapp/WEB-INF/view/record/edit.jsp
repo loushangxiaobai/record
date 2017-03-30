@@ -8,22 +8,9 @@ xmlns="http://www.w3.org/TR/REC-html40">
 
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css"
-	href='<c:url value="/static/css/amazeui.css"/>'>
-<link rel="stylesheet" type="text/css"
-	href='<c:url value="/static/css/admin.css"/>'>
 
 <script type="text/javascript"
-	src="<c:url value="/static/js/jquery.min.js"/>"></script>
-<script type="text/javascript"
-	src="<c:url value="/static/js/amazeui.min.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/static/js/app.js"/>"></script>
-<script type="text/javascript"
-	src="<c:url value="/static/js/layer/layer.js"/>"></script>
-<script type="text/javascript"
-	src="<c:url value="/static/plugin/My97DatePicker/WdatePicker.js"/>"></script>
-
-
+	src="<c:url value="/static/js/jquery.jqprint-0.3.js"/>"></script>
 <style>
 <!--
  /* Font Definitions */
@@ -182,18 +169,20 @@ div.WordSection1
 
 <body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
 
-<div class=WordSection1 style='layout-grid:15.6pt'>
 
 
 
-<div id="head">
-
+<button type="button" onclick="print()"
+									class="am-btn am-btn-primary" style="margin-left: 500px;margin-top: 20px;">打印</button>
+<div id="print">
+<p>2222222222</p>
+<p>erererere</p>
+</div>
 <p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
-normal'><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:11.0pt;
+normal;margin-left: 100px;'><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:11.0pt;
 font-family:黑体'>1</span></b><b style='mso-bidi-font-weight:normal'><span
 style='font-size:14.0pt;mso-bidi-font-size:11.0pt;font-family:黑体'>小时项目<span
-lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></span></b></p>
-</div>
+lang=EN-US>·</span >新开门店备案表<span lang=EN-US><o:p></o:p></span></span></b> </p>
 <div id="tablediv" style="text-align: center; margin: 0 auto; margin-left: 30%;margin-top: 20px;width: 800px;height: 1200px;">
   <form  id="form" enctype="multipart/form-data">
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 align=left
@@ -228,7 +217,9 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span lang=EN-US style='font-family:黑体'><input type="text" value="${entity.storePhone }" name="storePhone" id="storePhone" required="required"><o:p>&nbsp;</o:p></span></p>
+  exactly'><span lang=EN-US style='font-family:黑体'>
+  <input type="hidden" name="id" value="${entity.id }" >
+  <input type="text" value="${entity.storePhone }" name="storePhone" id="storePhone" required="required"><o:p>&nbsp;</o:p></span></p>
   </td>
 
  <td width=130 colspan=2 valign=top style='width:97.75pt;border:solid windowtext 1.0pt;
@@ -685,7 +676,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'><span lang=EN-US></span>
-  <input type="text" name="hezuoxieyiUrl" readonly="readonly" value="${entity.heuoxieyiUrl }"   onclick="openWindow('record/upload?id=heuoxieyiUrl','上传附件');" id="heuoxieyiUrl" placeholder="点击上传加盟商合作协议书" style="width: 300px">
+  <input type="text" name="hezuoxieyiUrl" readonly="readonly" value="${entity.heuoxieyiUrl }"   onclick="openWindow('upload?id=heuoxieyiUrl','上传附件');" id="heuoxieyiUrl" placeholder="点击上传加盟商合作协议书" style="width: 300px">
   <span
   lang=EN-US><o:p></o:p></span></span></p>
   </td>
@@ -698,7 +689,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span lang=EN-US style='font-family:黑体'></span><span
   style='font-family:黑体'>
-  <input type="text" name="shoujuUrl" id="shoujuUrl" placeholder="点击上传收据" value="${entity.shoujuUrl }" onclick="openWindow('record/upload?id=shoujuUrl','上传附件');" style="width: 250px">
+  <input type="text" name="shoujuUrl" id="shoujuUrl" placeholder="点击上传收据" value="${entity.shoujuUrl }" onclick="openWindow('upload?id=shoujuUrl','上传附件');" style="width: 250px">
    <span
   lang=EN-US></span><span lang=EN-US><o:p></o:p></span></span></p>
   </td>
@@ -713,7 +704,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'><span lang=EN-US></span><span
   lang=EN-US></span>
-  <input type="text" readonly="readonly"  value="${entity.idCardUrl }"  onclick="openWindow('record/upload?id=idCardUrl','上传附件');" name="idCardUrl" id="idCardUrl" placeholder="点击上传法人身份证正反面" style="width: 300px;">
+  <input type="text" readonly="readonly"  value="${entity.idCardUrl }"  onclick="openWindow('upload?id=idCardUrl','上传附件');" name="idCardUrl" id="idCardUrl" placeholder="点击上传法人身份证正反面" style="width: 300px;">
   <span lang=EN-US><o:p></o:p></span></span></p>
   </td>
   <td width=282 colspan=5 valign=top style='width:211.4pt;border-top:none;
@@ -725,7 +716,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'><span lang=EN-US></span><span
   lang=EN-US></span>
-  <input type="text" name="idCardInHandUrl" id="idCardInHandUrl" value="${entity.idCardInHandUrl }" placeholder="点击上传法人手持身份证照片正反面" style="width: 250px;" readonly="readonly" onclick="openWindow('record/upload?id=idCardInHandUrl','上传附件');">
+  <input type="text" name="idCardInHandUrl" id="idCardInHandUrl" value="${entity.idCardInHandUrl }" placeholder="点击上传法人手持身份证照片正反面" style="width: 250px;" readonly="readonly" onclick="openWindow('upload?id=idCardInHandUrl','上传附件');">
   <span lang=EN-US><o:p></o:p></span></span></p>
   </td>
  </tr>
@@ -738,7 +729,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'><span lang=EN-US></span>
-  <input type="text" name="engineerUrl" id="engineerUrl"  value="${entity.engineerUrl }"  placeholder="点击上传维修工程师登记表" style="width: 300px;" readonly="readonly" onclick="openWindow('record/upload?id=engineerUrl','上传附件');" >
+  <input type="text" name="engineerUrl" id="engineerUrl"  value="${entity.engineerUrl }"  placeholder="点击上传维修工程师登记表" style="width: 300px;" readonly="readonly" onclick="openWindow('upload?id=engineerUrl','上传附件');" >
    <span
   lang=EN-US><o:p></o:p></span></span></p>
   </td>
@@ -751,7 +742,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span lang=EN-US style='font-family:黑体'></span><span
   style='font-family:黑体'><span class=GramE></span>
-  <input type="text" name="StoreImageUrl" id="StoreImageUrl"  value="${entity.storeImage }" placeholder="点击上传店高清横屏照片" readonly="readonly" style="width: 250px;" onclick="openWindow('record/upload?id=StoreImageUrl','上传附件');">
+  <input type="text" name="StoreImageUrl" id="StoreImageUrl"  value="${entity.storeImage }" placeholder="点击上传店高清横屏照片" readonly="readonly" style="width: 250px;" onclick="openWindow('upload?id=StoreImageUrl','上传附件');">
   <span
   lang=EN-US><o:p></o:p></span></span></p>
   </td>
@@ -765,7 +756,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'><span lang=EN-US></span>
-  <input type="text" name="otherFileUrl" id="otherFileUrl"  value="${entity.otherFileUrl }" placeholder="点击上传其他资料文件" readonly="readonly" style="width: 300px;" onclick="openWindow('record/upload?id=otherFileUrl','上传附件');">
+  <input type="text" name="otherFileUrl" id="otherFileUrl"  value="${entity.otherFileUrl }" placeholder="点击上传其他资料文件" readonly="readonly" style="width: 300px;" onclick="openWindow('upload?id=otherFileUrl','上传附件');">
 <span
   lang=EN-US><o:p></o:p></span></span></p>
   </td>
@@ -1148,7 +1139,6 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   </td>
  
  </tr> 
- 
  <tr height=0>
  
   <td width=39 style='border:none'></td>
@@ -1165,10 +1155,10 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <td width=15 style='border:none'></td>
   <td width=29 style='border:none'></td>
   <td width=30 style='border:none'></td>
-  <td width=50 style='border:none;margin-left: -700px;'>
+  <td width=50 style='border:none;margin-left: -1000px;'>
   <p></p>
    <p style="margin-left: -500px" ><button type="button" onclick="submitDo();"
-									class="am-btn am-btn-primary">保存</button></td></p>
+									class="am-btn am-btn-primary" style="margin-left: 250px;margin-top: 20px;">保存</button></td></p>
  </tr>
  
 </table>
@@ -1183,30 +1173,29 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
 
 </body>
 <script type="text/javascript">
-		function submitDo() {
-			var data = $("#form").serialize();
-			data = decodeURIComponent(data, true);
-			$.ajax({
-				url : "record/add",
-				data : data,
-				method : 'post',
-				contentType : 'application/x-www-form-urlencoded',
-				encoding : 'UTF-8',
-				cache : false,
-				success : function(result) {
-					if (result.success) {
-						layer.msg('保存成功');
-						setTimeout("closeWindow()", 1000);
-					} else {
-						layer.msg('保存失败');
-					}
-				},
-				error : function() {
-					layer.msg('系统异常');
-				}
-			});
+function submitDo(){
+	var data = $("#form").serialize();
+	data = decodeURIComponent(data, true);
+	$.ajax({
+		url : "edit",
+		data : data,
+		method : 'post',
+		contentType : 'application/x-www-form-urlencoded',
+		encoding : 'UTF-8',
+		cache : false,
+		success : function(result) {
+			if (result.success) {
+				layer.msg('修改成功');
+				setTimeout("closeWindow()",1000);
+			} else {
+				layer.msg('修改失败');
+			}
+		},
+		error : function() {
+			layer.msg('系统异常');
 		}
-		
+	});
+}
 		
 		
 		function assignment(inpuid,inputvalue) {
@@ -1214,6 +1203,22 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
 			$(inputid).val(inputvalue);
 		}
 		
+		function print() {
+			$("#print").jqprint();
+		}
+		
 		
 	</script>
+	<script type="text/javascript"
+	src="<c:url value="/static/js/jquery.min.js"/>"></script>
+<script type="text/javascript"
+	src="<c:url value="/static/js/amazeui.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/static/js/app.js"/>"></script>
+<script type="text/javascript"
+	src="<c:url value="/static/js/layer/layer.js"/>"></script>
+<script type="text/javascript"
+	src="<c:url value="/static/plugin/My97DatePicker/WdatePicker.js"/>"></script>
+	<script type="text/javascript"
+	src="<c:url value="/static/js/jquery.jqprint-0.3.js"/>"></script>
+	
 </html>

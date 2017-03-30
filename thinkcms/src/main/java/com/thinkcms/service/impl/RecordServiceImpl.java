@@ -1,5 +1,7 @@
 package com.thinkcms.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,7 +32,7 @@ public class RecordServiceImpl implements RecordService{
 	}
 
 	@Transactional
-	public void del(Long id) {
+	public void del(Integer id) {
 		recordDao.del(id);
 	}
 
@@ -41,9 +43,15 @@ public class RecordServiceImpl implements RecordService{
 	}
 
 	@Transactional
-	public Record getRecord(Long id) {
+	public Record getRecord(Integer id) {
 		// TODO Auto-generated method stub
 		return recordDao.getRecord(id);
+	}
+
+	@Transactional
+	public List<Record> findById(String ids) {
+		// TODO Auto-generated method stub
+		return recordDao.findById(ids);
 	}
 
 

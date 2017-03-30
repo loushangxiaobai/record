@@ -27,182 +27,181 @@ public class Record  implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
-	private Long id;
+	private  Integer id;
 	//门店电话
-	@Column(name = "store_phone")
+	@Column(name = "storePhone")
 	private String storePhone;
 	//预计开业时间
-	@Column(name = "open_time")
+	@Column(name = "openTime")
 	private String openTime;
 	//门店详细地址
-	@Column(name = "store_addr")
+	@Column(name = "storeAddr")
 	private String storeAddr;
 	//经纬度
 	@Column(name = "jwd")
 	private String jwd;
 	//营业时间开始
-	@Column(name= "business_start")
+	@Column(name= "businessStart")
 	private String businessStart;
 	//营业时间结束
-	@Column(name= "business_end")
+	@Column(name= "businessEnd")
 	private String businessEnd;
 	//法人姓名
-	@Column(name = "legal_name")
+	@Column(name = "legalName")
 	private String legalName;
 	//手机号码
-	@Column(name = "mobilephone")
+	@Column(name = "mobilePhone")
 	private String mobilePhone;
 	//微信号
-	@Column(name = "wechat")
+	@Column(name = "weChat")
 	private String weChat;
 	//邮箱地址
 	@Column(name = "email")
 	private String email;
 	//QQ号码或其他联系方式
-	@Column(name = "qq")
+	@Column(name = "QQ")
 	private String QQ;
 	//门店店长姓名
-	@Column(name = "store_person_name")
+	@Column(name = "storePersonName")
 	private String storePersonName;
 	//门店店长手机号码
-	@Column(name = "store_person_phone")
+	@Column(name = "storePersonPhone")
 	private String storePersonPhone;
 	//门店店长微信
-	@Column(name = "store_person_wechat")
+	@Column(name = "storePersonWechat")
 	private String storePersonWechat;
 	//门店类型  1--独立店  2--店中店
-	@Column(name = "storetype")
+	@Column(name = "storeType")
 	private Integer storeType;
 	//工程师人数
-	@Column(name = "engineernum")
+	@Column(name = "engineerNum")
 	private Integer engineerNum;
 	//工程师附录地址
-	@Column(name = "appendix_addr")
+	@Column(name = "appendixAddr")
 	private String appendixAddr;
 	//线上平台
-	@Column(name = "xs_pingtai")
+	@Column(name = "xsPingTai")
 	private String xsPingTai;
 	//线上平台微信公众号
-	@Column(name = "xs")
+	@Column(name = "xsWechat")
 	private String xsWechat;
 	//是否使用其他订单平台
-	@Column(name = "isotherpt")
+	@Column(name = "isOtherPt")
 	private String isOtherPt;
 	//其他平台说明
-	@Column(name = "otherptinfo")
+	@Column(name = "otherPtInfo")
 	private String otherPtInfo;
 	//合同期限
-	@Column(name = "contract_dateline")
+	@Column(name = "contractDateline")
 	private String contractDateline;
 	//合同开始日期
-	@Column(name = "contract_start")
+	@Column(name = "contractStart")
 	private String contractStart;
 	//合同开始日期
-	@Column(name = "contract_end")
+	@Column(name = "contractEnd")
 	private String contractEnd;
 	//合作模式
-	@Column(name = "cooperation_model")
+	@Column(name = "cooperationModel")
 	private String cooperationModel;
 	//项目名称
-	@Column(name = "project_name")
+	@Column(name = "projectName")
 	private String projectName;
 	//加盟费用大写
-	@Column(name = "joincostbig")
+	@Column(name = "joinCostBig")
 	private String joinCostBig;
 	//加盟费用小写
-	@Column(name = "joincostsmall")
+	@Column(name = "joinCostSmall")
 	private BigDecimal joinCostSmall;
 	//加盟保证金大写
-	@Column(name = "joinassurebig")
+	@Column(name = "joinAssureBig")
 	private String joinAssureBig;
 	//加盟保证金小写
-	@Column(name = "joinassuresmall")
+	@Column(name = "joinAssureSmall")
 	private BigDecimal joinAssureSmall;
 	//合作协议书地址
-	@Column(name = "hezuoxieyiurl")
+	@Column(name = "heuoxieyiUrl")
 	private String heuoxieyiUrl;
 	//收据地址
-	@Column(name = "shoujuurl")
+	@Column(name = "shoujuUrl")
 	private String shoujuUrl;
 	//法人身份证地址
-	@Column(name = "idcardurl")
+	@Column(name = "idCardUrl")
 	private String idCardUrl;
 	//法人手持身份证地址
-	@Column(name = "idcardinhandurl")
+	@Column(name = "idCardInHandUrl")
 	private String idCardInHandUrl;
 	//维修工程师登记表地址
-	@Column(name = "engineerurl")
+	@Column(name = "engineerUrl")
 	private String engineerUrl;
-	//门店高清横屏照片地址
-	/*@Column(name = "storeimage")
-	private String StoreImage;*/
+	
 	
 	//门店高清横屏照片地址
 	@Column(name = "storeImage")
 	private String storeImage;
 	//其他文件资料地址
-	@Column(name = "otherfileurl")
+	@Column(name = "otherFileUrl")
 	private String otherFileUrl;
 	//分公司提交人
-	@Column(name = "filiale_submit_person")
+	@Column(name = "filialeSubmitPerson")
 	private String filialeSubmitPerson;
 	//提交日期
-	@Column(name = "submit_date")
+	@Column(name = "submitDate")
 	private String submitDate;
 	//分公司负责人
-	@Column(name = "filiale_principal")
+	@Column(name = "filialePrincipal")
 	private String filialePrincipal;
 	//分公司负责人签署日期
-	@Column(name = "filiale_principal_date")
+	@Column(name = "filialePrincipalDate")
 	private String filialePrincipalDate;
 	//财务部审核人
 	@Column(name = "Finance")
 	private String finance;
 	//财务部审核人签署日期
-	@Column(name = "finance_date")
+	@Column(name = "financeDate")
 	private String financeDate;
 	//门店名称
-	@Column(name = "store_name")
+	@Column(name = "storeName")
 	private String storeName;
 	//门店编码
-	@Column(name = "store_no")
+	@Column(name = "storeNo")
 	private String storeNo;
 	//经手人签名
-	@Column(name = "handler_name")
+	@Column(name = "handlerName")
 	private String handlerName;
 	//经手人签署日期
-	@Column(name = "handler_date")
+	@Column(name = "handlerDate")
 	private String handlerDate;
 	//网络部推广配对
-	@Column(name = "wlb_tuiguang")
+	@Column(name = "wlbTuiGuang")
 	private String wlbTuiGuang;
 	//网络部负责人
-	@Column(name = "wlb_sign")
+	@Column(name = "wlbSign")
 	private String wlbSign;
 	//网络部签署日期
-	@Column(name = "wlb_sign_date")
+	@Column(name = "wlbSignDate")
 	private String wlbSignDate;
 	//运营助理
-	@Column(name = "gbu_int")
+	@Column(name = "gbuInt")
 	private String gbuInt;
 	//运营助理签署日期
-	@Column(name = "gbu_int_date")
+	@Column(name = "gbuIntDate")
 	private String gbuIntDate;
 	//运营部负责人
-	@Column(name = "operations_director")
+	@Column(name = "operationsDirector")
 	private String operationsDirector;
 	//运营部负责人签署日期
-	@Column(name = "operations_director_date")
+	@Column(name = "operationsDirectorDate")
 	private String operationsDirectorDate;
 		
-	@Column(name = "create_date")
+	@Column(name = "createDate")
 	private String createDate;
-	@Column(name = "modify_date")
+	@Column(name = "modifyDate")
 	private String modifyDate;
-	public Long getId() {
+	
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getStorePhone() {
@@ -415,8 +414,6 @@ public class Record  implements Serializable{
 	public void setEngineerUrl(String engineerUrl) {
 		this.engineerUrl = engineerUrl;
 	}
-	
-	
 	public String getStoreImage() {
 		return storeImage;
 	}
@@ -584,6 +581,7 @@ public class Record  implements Serializable{
 				+ ", createDate=" + createDate + ", modifyDate=" + modifyDate
 				+ "]";
 	}
+	
 	
 
 }
