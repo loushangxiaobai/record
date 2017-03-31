@@ -31,17 +31,18 @@
 									onClick="del();">
 									<span class="am-icon-trash-o"></span> 删除
 								</button>
+								<span><a href="record/download?fileName=手机维修报价参考表20170118(1).zip">下载</a> </span>
 							</div>
 						</div>
 					</div>
-					<div class="am-u-sm-12 am-u-md-3">
+					<!-- <div class="am-u-sm-12 am-u-md-3">
 						<div class="am-input-group am-input-group-sm">
 							<input type="text" class="am-form-field" id="description" name="description" placeholder="角色名称模糊查询">
 							<span class="am-input-group-btn">
 								<button class="am-btn am-btn-default" type="button" onclick="query()">搜索</button>
 							</span>
 						</div>
-					</div>
+					</div> -->
 				</form>
 			</div>
 			<div id="list" class="am-g"></div>
@@ -127,7 +128,6 @@
 			$(obj).attr("checked",
 					document.getElementById($(obj).attr("id")).checked);
 		}
-		
 		
 		function exportByid(id) {
 			if (!id) {

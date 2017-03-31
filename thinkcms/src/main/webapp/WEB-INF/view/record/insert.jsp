@@ -671,7 +671,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'><span lang=EN-US></span>
-  <input type="text" name="hezuoxieyiUrl" readonly="readonly"  onclick="openWindow('record/upload?id=heuoxieyiUrl','上传附件');" id="heuoxieyiUrl" placeholder="点击上传加盟商合作协议书" style="width: 300px">
+  <input type="text" name="heuoxieyiUrl" readonly="readonly"  onclick="openWindow('record/upload?id=heuoxieyiUrl','上传附件');" id="heuoxieyiUrl" placeholder="点击上传加盟商合作协议书" style="width: 300px">
   <span
   lang=EN-US><o:p></o:p></span></span></p>
   </td>
@@ -737,7 +737,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span lang=EN-US style='font-family:黑体'></span><span
   style='font-family:黑体'><span class=GramE></span>
-  <input type="text" name="storeImage" id="storeImage" placeholder="点击上传店高清横屏照片" readonly="readonly" style="width: 250px;" onclick="openWindow('record/upload?id=storeImage','上传附件');">
+  <input type="text" name="storeImage" id="storeImage" placeholder="点击上传门店高清横屏照片" readonly="readonly" style="width: 250px;" onclick="openWindow('record/upload?id=storeImage','上传附件');">
   <span
   lang=EN-US><o:p></o:p></span></span></p>
   </td>

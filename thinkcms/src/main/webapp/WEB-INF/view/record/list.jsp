@@ -62,7 +62,11 @@
 					<th class="table-date am-hide-sm-only">运营助理签署日期</th> 
 					<th class="table-date am-hide-sm-only">运营部负责人</th> 
 					<th class="table-date am-hide-sm-only">运营部负责人签署日期</th> 
-					<th class="table-set" style="width: 300px;">操作</th>
+					<th class="table-set" >编辑</th>
+					<th class="table-set" >打印</th>
+					<th class="table-set" >发送短信</th>
+					<th class="table-set" >删除</th>
+					
 				</tr>
 			</thead>
 			<tbody>
@@ -84,7 +88,16 @@
 						<td class="am-text-middle">${item.storePersonName }</td>
 						<td class="am-text-middle">${item.storePersonPhone }</td>
 						<td class="am-text-middle">${item.storePersonWechat }</td>
-						<td class="am-text-middle">${item.storeType }</td>
+						<td class="am-text-middle">
+						<c:choose>
+						<c:when test="${item.storeType eq 1}">
+						   独立店
+						</c:when>
+						<c:otherwise>
+						    店中店
+						</c:otherwise>
+						</c:choose>
+						</td>
 						<td class="am-text-middle">${item.engineerNum }</td>
 						<td class="am-text-middle">${item.appendixAddr }</td>
 						<td class="am-text-middle">${item.xsPingTai }</td>
@@ -100,13 +113,16 @@
 						<td class="am-text-middle">${item.joinCostSmall }</td>
 						<td class="am-text-middle">${item.joinAssureBig }</td>
 						<td class="am-text-middle">${item.joinAssureSmall }</td>
-						<td class="am-text-middle">${item.heuoxieyiUrl }</td>
-						<td class="am-text-middle">${item.shoujuUrl }</td>
-						<td class="am-text-middle">${item.idCardUrl }</td>
-						<td class="am-text-middle">${item.idCardInHandUrl }</td>
-						<td class="am-text-middle">${item.engineerUrl }</td>
-						 <td class="am-text-middle">${item.storeImage }</td> 
-						<td class="am-text-middle">${item.otherFileUrl }</td>
+						<td class="am-text-middle">
+						<a href="record/download?fileName=${item.heuoxieyiUrl }">${item.heuoxieyiUrl }</a>
+						
+						</td>
+						<td class="am-text-middle"> <a href="record/download?fileName=${item.shoujuUrl }">${item.shoujuUrl }</a></td>
+						<td class="am-text-middle"> <a href="record/download?fileName=${item.idCardUrl }">${item.idCardUrl }</a></td>
+						<td class="am-text-middle"> <a href="record/download?fileName=${item.idCardInHandUrl }">${item.idCardInHandUrl }</a> </td>
+						<td class="am-text-middle">  <a href="record/download?fileName=${item.engineerUrl }">${item.engineerUrl }</a></td>
+						 <td class="am-text-middle"> <a href="record/download?fileName=${item.storeImage }">${item.storeImage }</a></td> 
+						<td class="am-text-middle"> <a href="record/download?fileName=${item.otherFileUrl }">${item.otherFileUrl }</a></td>
 						<td class="am-text-middle">${item.filialeSubmitPerson }</td>
 						<td class="am-text-middle">${item.submitDate }</td>
 						<td class="am-text-middle">${item.filialePrincipal }</td>
@@ -128,16 +144,45 @@
 							<div class="am-btn-toolbar">
 								<div class="am-btn-group am-btn-group-xs">
 									<button type="button" class="am-btn am-btn-default am-text-secondary"
-										onclick="openWindow('record/edit?id=${item.id}','权限编辑');" style="float: left;">
+										onclick="openWindow('record/edit?id=${item.id}','备案编辑');" style="float: left;">
 										<span class="am-icon-pencil-square-o"></span> 编辑
-									</button>
-									<button type="button" class="am-btn am-btn-default am-text-danger"
-									    onclick="del('${item.id}')" style="float: left;">
-										<span class="am-icon-trash-o"></span> 删除
 									</button>
 								</div>
 							</div>
 						</td>
+						
+						<td >
+							<div class="am-btn-toolbar">
+								<div class="am-btn-group am-btn-group-xs">
+									<button type="button" class="am-btn am-btn-default am-text-secondary"
+										onclick="openWindow('record/print?id=${item.id}','备案编辑');" style="float: left;">
+										<span class="am-icon-pencil-square-o"></span> 打印
+									</button>
+								</div>
+							</div>
+						</td>
+						<td>
+						
+						<div class="am-btn-toolbar">
+								<div class="am-btn-group am-btn-group-xs">
+						<button type="button" class="am-btn am-btn-default am-text-secondary"
+										onclick="openWindow('record/sendMessage?phone=${item.storePersonPhone}','短信编辑');" style="float: left;">
+										<span class="am-icon-pencil-square-o"></span> 发送短信
+									</button>
+										</div>
+							</div>
+									</td>
+						<td>
+						<div class="am-btn-toolbar">
+								<div class="am-btn-group am-btn-group-xs">
+						
+						<button type="button" class="am-btn am-btn-default am-text-danger"
+									    onclick="del('${item.id}')" style="float: left;">
+										<span class="am-icon-trash-o"></span> 删除
+									</button>
+									</div>
+							</div>
+									</td>
 					</tr>
 				</c:forEach>
 			</tbody>

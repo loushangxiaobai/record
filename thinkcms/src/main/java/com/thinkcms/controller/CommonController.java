@@ -67,6 +67,7 @@ public class CommonController {
 			HttpServletRequest request) throws IOException {
 		if (qqfile!=null&&qqfile.length>0) {
 			String url=request.getSession().getServletContext().getRealPath("/")+ "upload/";
+			System.out.println(url);
 			for(int i=0;i<qqfile.length;i++){
 				 MultipartFile file = qqfile[i];
 				 url+=saveFile(file, request);
