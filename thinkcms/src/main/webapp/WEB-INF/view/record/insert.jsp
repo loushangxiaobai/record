@@ -624,8 +624,8 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span style='font-family:黑体'>大写：人民币 &nbsp;&nbsp; <input type="text" name="joinCostBig" id="joinCostBig">
-  （小写：￥<input type="text" name="joinCostSmall" id="joinCostSmall" style="width: 100px"> 元）<span
+  exactly'><span style='font-family:黑体'>大写：人民币 &nbsp;&nbsp; <input type="text" name="joinCostBig" id="joinCostBig" readonly="readonly">
+  （小写：￥<input type="text" name="joinCostSmall" id="joinCostSmall" style="width: 100px"  onblur="changeRMB(this.value,'joinCostBig');"> 元）<span
   lang=EN-US><o:p></o:p></span></span></p>
   </td>
  </tr>
@@ -646,8 +646,8 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span style='font-family:黑体'>大写：  人民币&nbsp;&nbsp;     <input type="text" name="joinAssureBig" id="joinAssureBig">
-  （小写：￥<input type="text" name="joinAssureSmall" id="joinAssureSmall" style="width: 100px">元）<span lang=EN-US><o:p></o:p></span></span></p>
+  exactly'><span style='font-family:黑体'>大写：  人民币&nbsp;&nbsp;     <input type="text" name="joinAssureBig" id="joinAssureBig" readonly="readonly">
+  （小写：￥<input type="text" name="joinAssureSmall" id="joinAssureSmall" style="width: 100px" onblur="changeRMB(this.value,'joinAssureBig');">元）<span lang=EN-US><o:p></o:p></span></span></p>
   </td>
  </tr>
  <tr style='mso-yfti-irow:13'>
@@ -1005,7 +1005,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <input type="checkbox" name="wlbTuiGuang" value="上门装备物料"> 上门装备物料
    <input type="checkbox" name="wlbTuiGuang" value="线下地">线下地推活动<span class=GramE>推活动</span> 
   <input type="checkbox" name="wlbTuiGuang" value="新浪微博"> 新<span class=GramE>浪微博</span>
-  <input type="checkbox" name="wlbTuiGuang" value="其他"> 其他： <input type="text" name=""><span lang=EN-US><o:p></o:p></span></span></p>
+  <input type="checkbox" name="wlbTuiGuang" value="其他"> 其他： <input type="text" name="wlbTuiGuangOther" value="${wlbTuiGuangOther }"><span lang=EN-US><o:p></o:p></span></span></p>
   </td> 
  </tr> 
  <tr style='mso-yfti-irow:23;page-break-inside:avoid;height:19.85pt'>
@@ -1153,7 +1153,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <td width=30 style='border:none'></td>
   <td width=50 style='border:none;margin-left: -700px;'>
   <p></p>
-   <p style="margin-left: -500px" ><button type="button" onclick="submitDo();"
+   <p style="margin-left: -600px" ><button type="button" onclick="submitDo();"
 									class="am-btn am-btn-primary">保存</button></td></p>
  </tr>
  
@@ -1166,7 +1166,9 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
 </p>
 </div>
 
-
+</div>
+		<%@ include file="/WEB-INF/view/common/footer.jsp"%>
+	</div>
 </body>
 <script type="text/javascript">
 		function submitDo() {
@@ -1183,6 +1185,30 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
 					if (result.success) {
 						layer.msg('保存成功');
 						setTimeout("closeWindow()", 1000);
+					} else {
+						layer.msg('保存失败');
+					}
+				},
+				error : function() {
+					layer.msg('系统异常');
+				}
+			});
+		}
+		function changeRMB(money,inputId) {
+			var inputid="#"+inputId;
+			$.ajax({
+				url : "record/changermb",
+				data : "money="+money,
+				method : 'post',
+				contentType : 'application/x-www-form-urlencoded',
+				encoding : 'UTF-8',
+				cache : false,
+				success : function(result) {
+					if (result!="") {
+						/* layer.msg('保存成功');
+						setTimeout("closeWindow()", 1000); */
+						
+						$(inputid).val(result);
 					} else {
 						layer.msg('保存失败');
 					}

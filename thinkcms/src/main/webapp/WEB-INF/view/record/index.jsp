@@ -31,7 +31,6 @@
 									onClick="del();">
 									<span class="am-icon-trash-o"></span> 删除
 								</button>
-								<span><a href="record/download?fileName=手机维修报价参考表20170118(1).zip">下载</a> </span>
 							</div>
 						</div>
 					</div>
@@ -153,6 +152,9 @@
 				});//end layer.msg
 			
 		}
+		
+		
+		
 	</script>
 </body>
 </html>

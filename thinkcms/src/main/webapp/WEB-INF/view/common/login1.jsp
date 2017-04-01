@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="shortcut icon" type="image/x-icon" href='<c:url value="/static/image/favicon.ico" />' />  
 	<meta charset="UTF-8">
 	<title>1小时备案管理系统</title>
 	<meta name="renderer" content="webkit">	
@@ -22,7 +23,7 @@
 <div class="layui-layout layui-layout-login">
 	<h1>
 		 <strong>1小时备案管理系统</strong>
-		 <em>Management System</em>
+		 <em>Record System</em>
 	</h1>
 	<form class="form-signin" role="form" action="login" method="post">
 	<div class="layui-user-icon larry-login">
@@ -37,7 +38,7 @@
     </div>
     </form>
     <div class="layui-login-text">
-    	<p>© 2016-2017 Larry 版权所有</p>
+    	<p>© 广州一小时通信设备有限公司 版权所有</p>
         
     </div>
 </div>

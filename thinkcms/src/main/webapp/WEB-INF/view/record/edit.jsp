@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="myfn" uri="http://www.cms.com/thinkcms/functions"%>
 <%@ page pageEncoding="UTF-8"%>
 <html xmlns:v="urn:schemas-microsoft-com:vml"
 xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -170,14 +171,7 @@ div.WordSection1
 
 <body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
 
-
-
-
-<button type="button" onclick="print()"
-									class="am-btn am-btn-primary" style="margin-left: 500px;margin-top: 20px;">打印</button>
 <div id="print">
-
-
 <p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
 normal;margin-left: 100px;'><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:11.0pt;
 font-family:黑体'>1</span></b><b style='mso-bidi-font-weight:normal'><span
@@ -466,9 +460,12 @@ lang=EN-US>·</span >新开门店备案表<span lang=EN-US><o:p></o:p></span></s
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'>
-  <input type="radio" value="1" name="storeType" id="storeType">
- <span class=GramE>独立店 <input type="radio" value="2" name="storeType"></span> 店中店<span
-  lang=EN-US><o:p></o:p></span></span></p>
+  <c:set value="0" var="storeType" scope="page"/>
+  <input type="radio" value="1" name="storeType" id="storeType"  <c:if test="${entity.storeType eq 1 }">checked="checked" </c:if>  >
+ <span class=GramE>独立店 <input type="radio" value="2" name="storeType"  <c:if test="${entity.storeType eq 2 }"> checked="checked" </c:if> ></span> 店中店<span
+  lang=EN-US><o:p></o:p></span></span>
+  
+  </p>
   </td>
   <td width=130 colspan=2 valign=top style='width:97.75pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -511,8 +508,11 @@ lang=EN-US>·</span >新开门店备案表<span lang=EN-US><o:p></o:p></span></s
   exactly'><span style='font-family:黑体'>
   
   
- <input type="checkbox" name="xsPingTai" value="百度"> 百度 <input type="checkbox" name="xsPingTai" value="美团"><span class=GramE>美团</span> <input type="checkbox" name="xsPingTai" value="淘宝"><span
-  class=GramE>淘宝</span><input type="checkbox" name="xsPingTai" value="58同城"><span lang=EN-US>58</span>同城<input type="checkbox" name="xsPingTai" value="微信公众号"><span class=GramE>微信公众号</span>
+ <input type="checkbox" name="xsPingTai" value="百度" <c:if test="${myfn:contains(xs, '百度')}">checked='checked'</c:if>  > 百度 
+ <input type="checkbox" name="xsPingTai" value="美团" <c:if test="${myfn:contains(xs, '美团')}">checked='checked'</c:if>><span class=GramE>美团</span>
+  <input type="checkbox" name="xsPingTai" value="淘宝" <c:if test="${myfn:contains(xs, '淘宝')}">checked='checked'</c:if>><span class=GramE>淘宝</span>
+  <input type="checkbox" name="xsPingTai" value="58同城" <c:if test="${myfn:contains(xs, '58同城')}">checked='checked'</c:if>><span lang=EN-US>58</span>同城
+  <input type="checkbox" name="xsPingTai" value="微信公众号" <c:if test="${myfn:contains(xs, '微信公众号')}">checked='checked'</c:if>><span class=GramE>微信公众号</span>
   公众号名称：<input type="text" name="xsWechat" id="xsWechat" style="width: 80px"> <u><span lang=EN-US><o:p></o:p></span></u></span></p>
   </td>
  </tr> 
@@ -533,7 +533,7 @@ lang=EN-US>·</span >新开门店备案表<span lang=EN-US><o:p></o:p></span></s
   <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span style='font-family:黑体'><input type="radio" name="isOtherPt" value="0">没有 <input type="radio" name="isOtherPt" value="1">有，请说明： <input type="text" name="otherPtInfo" id="otherPtInfo" style="width: 300px;"><span lang=EN-US><o:p></o:p></span></span></p>
+  exactly'><span style='font-family:黑体'><input type="radio" name="isOtherPt" value="0" <c:if test="${entity.isOtherPt eq 0 }">checked="checked" </c:if>>没有 <input type="radio" name="isOtherPt" value="1" <c:if test="${entity.isOtherPt eq 1 }">checked="checked" </c:if>>有，请说明： <input type="text" name="otherPtInfo" id="otherPtInfo" value="${entity.otherPtInfo }" style="width: 300px;"><span lang=EN-US><o:p></o:p></span></span></p>
   </td>
  </tr> 
   <tr style='mso-yfti-irow:9'>
@@ -602,14 +602,14 @@ lang=EN-US>·</span >新开门店备案表<span lang=EN-US><o:p></o:p></span></s
   <p class=MsoNormal style='line-height:115%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span style='font-family:黑体'> <input type="radio" name="cooperationModel" value="总部直营"> 总部直营 
+  exactly'><span style='font-family:黑体'> <input type="radio" name="cooperationModel" value="总部直营" <c:if test="${entity.cooperationModel eq '总部直营'}"> checked="checked"</c:if> > 总部直营 
   
-  <input type="radio" name="cooperationModel" value="子公司直营">子公司直营 
-  <input type="radio" name="cooperationModel" value="代理直营 ">代理直营 
-  <input type="radio" name="cooperationModel" value="总部授权 ">总部授权 
-  <input type="radio" name="cooperationModel" value="子公司授权">子公司授权
-  <input type="radio" name="cooperationModel" value="代理授权">代理授权
-  <input type="radio" name="cooperationModel" value="企业合作门店">企业合作门店（注明项目名称 ）<input type="text" name="projectName"  id="projectName" style="width: 350px;"> </p>
+  <input type="radio" name="cooperationModel" value="子公司直营" <c:if test="${entity.cooperationModel eq '子公司直营'}"> checked="checked"</c:if>>子公司直营 
+  <input type="radio" name="cooperationModel" value="代理直营 " <c:if test="${entity.cooperationModel eq '代理直营'}"> checked="checked"</c:if>>代理直营 
+  <input type="radio" name="cooperationModel" value="总部授权 " <c:if test="${entity.cooperationModel eq '总部授权'}"> checked="checked"</c:if>>总部授权 
+  <input type="radio" name="cooperationModel" value="子公司授权" <c:if test="${entity.cooperationModel eq '子公司授权'}"> checked="checked"</c:if>>子公司授权
+  <input type="radio" name="cooperationModel" value="代理授权" <c:if test="${entity.cooperationModel eq '代理授权'}"> checked="checked"</c:if>>代理授权
+  <input type="radio" name="cooperationModel" value="企业合作门店" <c:if test="${entity.cooperationModel eq '企业合作门店'}"> checked="checked"</c:if>>企业合作门店（注明项目名称 ）<input type="text" name="projectName" value="${entity.projectName }"  id="projectName" style="width: 350px;"> </p>
   </td>
  </tr>
  <tr style='mso-yfti-irow:11'>
@@ -998,19 +998,19 @@ lang=EN-US>·</span >新开门店备案表<span lang=EN-US><o:p></o:p></span></s
   <p class=MsoNormal style='line-height:115%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span style='font-family:黑体'><input type="checkbox" name="wlbTuiGuang" value="58同城">  当地<span lang=EN-US>58</span>同城 
-  <input type="checkbox" name="wlbTuiGuang" value="当地自媒体推广"> 当地自媒体推广
-  <input type="checkbox" name="wlbtuiguang" value="美团"> <span class=GramE>美团</span> 
-  <input type="checkbox" name="wlbtuiguang" value="百度地图"> 百度地图
-   <input type="checkbox" name="wlbTuiGuang" value="百度糯米团 "> 百度糯米团 
-   <input type="checkbox" name="wlbTuiGuang" value="官方线上平台"> 官方线上平台
-   <input type="checkbox" name="wlbTuiGuang" value="门店定位查询 "> 门店定位查询 
-   <input type="checkbox" name="wlbTuiGuang" value="1小时内部维修图纸"> <span lang=EN-US>1</span>小时内部维修图纸
-  <input type="checkbox" name="wlbTuiGuang" value="上门服务培训 "> 上门服务培训 
-  <input type="checkbox" name="wlbTuiGuang" value="上门装备物料"> 上门装备物料
-   <input type="checkbox" name="wlbTuiGuang" value="线下地">线下地推活动<span class=GramE>推活动</span> 
-  <input type="checkbox" name="wlbTuiGuang" value="新浪微博"> 新<span class=GramE>浪微博</span>
-  <input type="checkbox" name="wlbTuiGuang" value="其他"> 其他： <input type="text" name=""><span lang=EN-US><o:p></o:p></span></span></p>
+  exactly'><span style='font-family:黑体'><input type="checkbox" name="wlbTuiGuang" value="58同城" <c:if test="${myfn:contains(tuiguang, '58同城')}">checked='checked'</c:if>>  当地<span lang=EN-US>58</span>同城 
+  <input type="checkbox" name="wlbTuiGuang" value="当地自媒体推广" <c:if test="${myfn:contains(tuiguang, '当地自媒体推广')}">checked='checked'</c:if>> 当地自媒体推广
+  <input type="checkbox" name="wlbtuiguang" value="美团" <c:if test="${myfn:contains(tuiguang, '美团')}">checked='checked'</c:if>> <span class=GramE>美团</span> 
+  <input type="checkbox" name="wlbtuiguang" value="百度地图" <c:if test="${myfn:contains(tuiguang, '百度地图')}">checked='checked'</c:if>> 百度地图
+   <input type="checkbox" name="wlbTuiGuang" value="百度糯米团 " <c:if test="${myfn:contains(tuiguang, '百度糯米团')}">checked='checked'</c:if>> 百度糯米团 
+   <input type="checkbox" name="wlbTuiGuang" value="官方线上平台" <c:if test="${myfn:contains(tuiguang, '官方线上平台')}">checked='checked'</c:if>> 官方线上平台
+   <input type="checkbox" name="wlbTuiGuang" value="门店定位查询 " <c:if test="${myfn:contains(tuiguang, '门店定位查询')}">checked='checked'</c:if>> 门店定位查询 
+   <input type="checkbox" name="wlbTuiGuang" value="1小时内部维修图纸" <c:if test="${myfn:contains(tuiguang, '1小时内部维修图纸')}">checked='checked'</c:if>> <span lang=EN-US>1</span>小时内部维修图纸
+  <input type="checkbox" name="wlbTuiGuang" value="上门服务培训 " <c:if test="${myfn:contains(tuiguang, '上门服务培训')}">checked='checked'</c:if>> 上门服务培训 
+  <input type="checkbox" name="wlbTuiGuang" value="上门装备物料" <c:if test="${myfn:contains(tuiguang, '上门装备物料')}">checked='checked'</c:if>> 上门装备物料
+   <input type="checkbox" name="wlbTuiGuang" value="线下地推活动" <c:if test="${myfn:contains(tuiguang, '线下地推活动')}">checked='checked'</c:if>>线下地推活动</span> 
+  <input type="checkbox" name="wlbTuiGuang" value="新浪微博" <c:if test="${myfn:contains(tuiguang, '新浪微博')}">checked='checked'</c:if>> 新<span class=GramE>浪微博</span>
+  <input type="checkbox" name="wlbTuiGuang" value="其他" <c:if test="${myfn:contains(tuiguang, '其他')}">checked='checked'</c:if>> 其他： <input type="text" name="wlbTuiGuangOther" value="${entity.wlbTuiGuangOther }"><span lang=EN-US><o:p></o:p></span></span></p>
   </td> 
  </tr> 
  <tr style='mso-yfti-irow:23;page-break-inside:avoid;height:19.85pt'>
@@ -1294,6 +1294,15 @@ function submitDo(){
 	
 	
 	</script>
+	<!-- <script type="text/javascript">
+	$(document).ready(function(){ 
+		　　$("#a").click(function(){ 
+		　　　　//adding your code here　　 
+		　　}); 
+		}); 
+	
+	</script> -->
+	
 	<script type="text/javascript">
 	jQuery.migrateMute===void 0&&(jQuery.migrateMute=!0),function(e,t,n){function r(n){var r=t.console;i[n]||(i[n]=!0,e.migrateWarnings.push(n),r&&r.warn&&!e.migrateMute&&(r.warn("JQMIGRATE: "+n),e.migrateTrace&&r.trace&&r.trace()))}function a(t,a,i,o){if(Object.defineProperty)try{return Object.defineProperty(t,a,{configurable:!0,enumerable:!0,get:function(){return r(o),i},set:function(e){r(o),i=e}}),n}catch(s){}e._definePropertyBroken=!0,t[a]=i}var i={};e.migrateWarnings=[],!e.migrateMute&&t.console&&t.console.log&&t.console.log("JQMIGRATE: Logging is active"),e.migrateTrace===n&&(e.migrateTrace=!0),e.migrateReset=function(){i={},e.migrateWarnings.length=0},"BackCompat"===document.compatMode&&r("jQuery is not compatible with Quirks Mode");var o=e("<input/>",{size:1}).attr("size")&&e.attrFn,s=e.attr,u=e.attrHooks.value&&e.attrHooks.value.get||function(){return null},c=e.attrHooks.value&&e.attrHooks.value.set||function(){return n},l=/^(?:input|button)$/i,d=/^[238]$/,p=/^(?:autofocus|autoplay|async|checked|controls|defer|disabled|hidden|loop|multiple|open|readonly|required|scoped|selected)$/i,f=/^(?:checked|selected)$/i;a(e,"attrFn",o||{},"jQuery.attrFn is deprecated"),e.attr=function(t,a,i,u){var c=a.toLowerCase(),g=t&&t.nodeType;return u&&(4>s.length&&r("jQuery.fn.attr( props, pass ) is deprecated"),t&&!d.test(g)&&(o?a in o:e.isFunction(e.fn[a])))?e(t)[a](i):("type"===a&&i!==n&&l.test(t.nodeName)&&t.parentNode&&r("Can't change the 'type' of an input or button in IE 6/7/8"),!e.attrHooks[c]&&p.test(c)&&(e.attrHooks[c]={get:function(t,r){var a,i=e.prop(t,r);return i===!0||"boolean"!=typeof i&&(a=t.getAttributeNode(r))&&a.nodeValue!==!1?r.toLowerCase():n},set:function(t,n,r){var a;return n===!1?e.removeAttr(t,r):(a=e.propFix[r]||r,a in t&&(t[a]=!0),t.setAttribute(r,r.toLowerCase())),r}},f.test(c)&&r("jQuery.fn.attr('"+c+"') may use property instead of attribute")),s.call(e,t,a,i))},e.attrHooks.value={get:function(e,t){var n=(e.nodeName||"").toLowerCase();return"button"===n?u.apply(this,arguments):("input"!==n&&"option"!==n&&r("jQuery.fn.attr('value') no longer gets properties"),t in e?e.value:null)},set:function(e,t){var a=(e.nodeName||"").toLowerCase();return"button"===a?c.apply(this,arguments):("input"!==a&&"option"!==a&&r("jQuery.fn.attr('value', val) no longer sets properties"),e.value=t,n)}};var g,h,v=e.fn.init,m=e.parseJSON,y=/^([^<]*)(<[\w\W]+>)([^>]*)$/;e.fn.init=function(t,n,a){var i;return t&&"string"==typeof t&&!e.isPlainObject(n)&&(i=y.exec(e.trim(t)))&&i[0]&&("<"!==t.charAt(0)&&r("$(html) HTML strings must start with '<' character"),i[3]&&r("$(html) HTML text after last tag is ignored"),"#"===i[0].charAt(0)&&(r("HTML string cannot start with a '#' character"),e.error("JQMIGRATE: Invalid selector string (XSS)")),n&&n.context&&(n=n.context),e.parseHTML)?v.call(this,e.parseHTML(i[2],n,!0),n,a):v.apply(this,arguments)},e.fn.init.prototype=e.fn,e.parseJSON=function(e){return e||null===e?m.apply(this,arguments):(r("jQuery.parseJSON requires a valid JSON string"),null)},e.uaMatch=function(e){e=e.toLowerCase();var t=/(chrome)[ \/]([\w.]+)/.exec(e)||/(webkit)[ \/]([\w.]+)/.exec(e)||/(opera)(?:.*version|)[ \/]([\w.]+)/.exec(e)||/(msie) ([\w.]+)/.exec(e)||0>e.indexOf("compatible")&&/(mozilla)(?:.*? rv:([\w.]+)|)/.exec(e)||[];return{browser:t[1]||"",version:t[2]||"0"}},e.browser||(g=e.uaMatch(navigator.userAgent),h={},g.browser&&(h[g.browser]=!0,h.version=g.version),h.chrome?h.webkit=!0:h.webkit&&(h.safari=!0),e.browser=h),a(e,"browser",e.browser,"jQuery.browser is deprecated"),e.sub=function(){function t(e,n){return new t.fn.init(e,n)}e.extend(!0,t,this),t.superclass=this,t.fn=t.prototype=this(),t.fn.constructor=t,t.sub=this.sub,t.fn.init=function(r,a){return a&&a instanceof e&&!(a instanceof t)&&(a=t(a)),e.fn.init.call(this,r,a,n)},t.fn.init.prototype=t.fn;var n=t(document);return r("jQuery.sub() is deprecated"),t},e.ajaxSetup({converters:{"text json":e.parseJSON}});var b=e.fn.data;e.fn.data=function(t){var a,i,o=this[0];return!o||"events"!==t||1!==arguments.length||(a=e.data(o,t),i=e._data(o,t),a!==n&&a!==i||i===n)?b.apply(this,arguments):(r("Use of jQuery.fn.data('events') is deprecated"),i)};var j=/\/(java|ecma)script/i,w=e.fn.andSelf||e.fn.addBack;e.fn.andSelf=function(){return r("jQuery.fn.andSelf() replaced by jQuery.fn.addBack()"),w.apply(this,arguments)},e.clean||(e.clean=function(t,a,i,o){a=a||document,a=!a.nodeType&&a[0]||a,a=a.ownerDocument||a,r("jQuery.clean() is deprecated");var s,u,c,l,d=[];if(e.merge(d,e.buildFragment(t,a).childNodes),i)for(c=function(e){return!e.type||j.test(e.type)?o?o.push(e.parentNode?e.parentNode.removeChild(e):e):i.appendChild(e):n},s=0;null!=(u=d[s]);s++)e.nodeName(u,"script")&&c(u)||(i.appendChild(u),u.getElementsByTagName!==n&&(l=e.grep(e.merge([],u.getElementsByTagName("script")),c),d.splice.apply(d,[s+1,0].concat(l)),s+=l.length));return d});var Q=e.event.add,x=e.event.remove,k=e.event.trigger,N=e.fn.toggle,T=e.fn.live,M=e.fn.die,S="ajaxStart|ajaxStop|ajaxSend|ajaxComplete|ajaxError|ajaxSuccess",C=RegExp("\\b(?:"+S+")\\b"),H=/(?:^|\s)hover(\.\S+|)\b/,A=function(t){return"string"!=typeof t||e.event.special.hover?t:(H.test(t)&&r("'hover' pseudo-event is deprecated, use 'mouseenter mouseleave'"),t&&t.replace(H,"mouseenter$1 mouseleave$1"))};e.event.props&&"attrChange"!==e.event.props[0]&&e.event.props.unshift("attrChange","attrName","relatedNode","srcElement"),e.event.dispatch&&a(e.event,"handle",e.event.dispatch,"jQuery.event.handle is undocumented and deprecated"),e.event.add=function(e,t,n,a,i){e!==document&&C.test(t)&&r("AJAX events should be attached to document: "+t),Q.call(this,e,A(t||""),n,a,i)},e.event.remove=function(e,t,n,r,a){x.call(this,e,A(t)||"",n,r,a)},e.fn.error=function(){var e=Array.prototype.slice.call(arguments,0);return r("jQuery.fn.error() is deprecated"),e.splice(0,0,"error"),arguments.length?this.bind.apply(this,e):(this.triggerHandler.apply(this,e),this)},e.fn.toggle=function(t,n){if(!e.isFunction(t)||!e.isFunction(n))return N.apply(this,arguments);r("jQuery.fn.toggle(handler, handler...) is deprecated");var a=arguments,i=t.guid||e.guid++,o=0,s=function(n){var r=(e._data(this,"lastToggle"+t.guid)||0)%o;return e._data(this,"lastToggle"+t.guid,r+1),n.preventDefault(),a[r].apply(this,arguments)||!1};for(s.guid=i;a.length>o;)a[o++].guid=i;return this.click(s)},e.fn.live=function(t,n,a){return r("jQuery.fn.live() is deprecated"),T?T.apply(this,arguments):(e(this.context).on(t,this.selector,n,a),this)},e.fn.die=function(t,n){return r("jQuery.fn.die() is deprecated"),M?M.apply(this,arguments):(e(this.context).off(t,this.selector||"**",n),this)},e.event.trigger=function(e,t,n,a){return n||C.test(e)||r("Global events are undocumented and deprecated"),k.call(this,e,t,n||document,a)},e.each(S.split("|"),function(t,n){e.event.special[n]={setup:function(){var t=this;return t!==document&&(e.event.add(document,n+"."+e.guid,function(){e.event.trigger(n,null,t,!0)}),e._data(this,n,e.guid++)),!1},teardown:function(){return this!==document&&e.event.remove(document,n+"."+e._data(this,n)),!1}}})}(jQuery,window);
 	</script>

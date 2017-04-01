@@ -5,7 +5,10 @@ package com.thinkcms.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -29,6 +32,7 @@ import com.thinkcms.entity.Record;
 import com.thinkcms.service.RecordService;
 import com.thinkcms.support.DownloadFile;
 import com.thinkcms.support.Export;
+import com.thinkcms.support.NumberToCN;
 import com.thinkcms.support.ReqDto;
 import com.thinkcms.support.Result;
 import com.thinkcms.support.SMSUtil;
@@ -81,6 +85,20 @@ public class RecordController {
 		return new Result(true, record);
 	}
 	
+	@RequiresPermissions({ "record/add" })
+	@ResponseBody
+	@RequestMapping(value = "/changermb", method = RequestMethod.POST)
+	public Object changeRMB(BigDecimal money,Model model,HttpServletRequest request) {
+		String RMB="";
+		try {
+			 RMB= NumberToCN.number2CNMontrayUnit(money);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new Result(false, e);
+		}
+		return RMB;
+	}
+	
 	@RequiresPermissions({ "record/del" })
 	@ResponseBody
 	@RequestMapping(value = "/del", method = RequestMethod.POST)
@@ -109,7 +127,27 @@ public class RecordController {
 	public String toEdit(Integer id, Model model) {
 		try {
 			Record record = recordService.getRecord(id);
+			String xspingtai=record.getXsPingTai();
+			if(xspingtai!=null){
+				String[]  xs =xspingtai.split(",");
+				ArrayList<String> xslist =new ArrayList<String>();
+				for(int i=0;i<xs.length;i++){
+					xslist.add(xs[i]);
+				}
+				model.addAttribute("xs", xslist);
+			}
+			
+			String wlbtuiguang=record.getWlbTuiGuang();
+			if(wlbtuiguang!=null){
+				String [] tuiguang =wlbtuiguang.split(",");
+				ArrayList<String> tglist = new ArrayList<>();
+				for(int j=0;j<tuiguang.length;j++){
+					tglist.add(tuiguang[j]);
+				}
+				model.addAttribute("tuiguang", tglist);
+			}
 			model.addAttribute("entity", record);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "common/error";

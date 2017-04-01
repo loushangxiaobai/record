@@ -28,30 +28,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.thinkcms.entity.Attachment;
-import com.thinkcms.service.AttachmentService;
 import com.thinkcms.support.QiniuFileUtil;
 import com.thinkcms.support.ReqDto;
 import com.thinkcms.support.Result;
 
 @Controller
 public class CommonController {
-	@Autowired
-	private AttachmentService attachmentService;
 	@RequestMapping("common/chooseLayer")
 	public String chooseLayer() {
 		return "attachment/chooseLayer";
-	}
-	@RequestMapping("common/imgList")
-	public String imgList(Model model,ReqDto req) {
-		try {
-			model.addAttribute("list", attachmentService.findList(null, null,"image",
-					req.getPageNo(), req.getPageSize()));
-		} catch (Exception e) {
-			e.printStackTrace();
-			return "common/error";
-		}
-		return "attachment/imgList";
 	}
 	/**
 	 * 文件上传 如果只是上传一个文件,则只需要MultipartFile类型接收文件即可,而且无需显式指定@RequestParam注解
@@ -107,18 +92,6 @@ public class CommonController {
 	
 	
 
-	/**
-	 * 文件删除
-	 */
-	@ResponseBody
-	@RequestMapping("common/fileDelete")
-	public Object fileDelete(String path, HttpServletRequest request) {
-		if (path != null) {
-			attachmentService.delByUrl(path);
-			QiniuFileUtil.deleteQiniuP(path);
-		}
-		return new Result();
-	}
 
 	@RequestMapping(value = "/common/createCode", method = RequestMethod.GET)
 	public void createCode(HttpServletRequest request,

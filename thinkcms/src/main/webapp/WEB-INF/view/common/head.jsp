@@ -6,13 +6,14 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
-<title>thinkcms</title>
+<title>1小时备案管理系统</title>
 
 <!-- AmazeUI -->
 <link rel="stylesheet" type="text/css"
 	href='<c:url value="/static/css/amazeui.css"/>'>
 <link rel="stylesheet" type="text/css"
 	href='<c:url value="/static/css/admin.css"/>'>
+	<link rel="shortcut icon" type="image/x-icon" href='<c:url value="/static/image/favicon.ico" />' />  
 
 <script type="text/javascript"
 	src="<c:url value="/static/js/jquery.min.js"/>"></script>

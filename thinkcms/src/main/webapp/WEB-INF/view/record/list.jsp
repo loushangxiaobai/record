@@ -133,7 +133,7 @@
 						<td class="am-text-middle">${item.storeNo }</td>
 						<td class="am-text-middle">${item.handlerName }</td>
 						<td class="am-text-middle">${item.handlerDate }</td>
-					    <td class="am-text-middle">${item.wlbTuiGuang }</td>
+					    <td class="am-text-middle">${item.wlbTuiGuang } <span> ${wlbTuiGuangOther }</span></td>
 						<td class="am-text-middle">${item.wlbSign }</td>
 						<td class="am-text-middle">${item.wlbSignDate }</td>
 						<td class="am-text-middle">${item.gbuInt }</td>
@@ -154,10 +154,12 @@
 						<td >
 							<div class="am-btn-toolbar">
 								<div class="am-btn-group am-btn-group-xs">
-									<button type="button" class="am-btn am-btn-default am-text-secondary"
+								<a href="record/print?id=${item.id}" class="am-btn am-btn-default am-text-secondary">打印</a>
+								
+									<%-- <button type="button" class="am-btn am-btn-default am-text-secondary"
 										onclick="openWindow('record/print?id=${item.id}','备案编辑');" style="float: left;">
 										<span class="am-icon-pencil-square-o"></span> 打印
-									</button>
+									</button> --%>
 								</div>
 							</div>
 						</td>

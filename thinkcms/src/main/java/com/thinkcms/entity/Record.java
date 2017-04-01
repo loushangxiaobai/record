@@ -174,6 +174,9 @@ public class Record  implements Serializable{
 	//网络部推广配对
 	@Column(name = "wlbTuiGuang")
 	private String wlbTuiGuang;
+	//网络部推广其他类型
+	@Column(name = "wlbTuiGuangOther")
+	private String wlbTuiGuangOther;
 	//网络部负责人
 	@Column(name = "wlbSign")
 	private String wlbSign;
@@ -543,6 +546,13 @@ public class Record  implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
+	public String getWlbTuiGuangOther() {
+		return wlbTuiGuangOther;
+	}
+	public void setWlbTuiGuangOther(String wlbTuiGuangOther) {
+		this.wlbTuiGuangOther = wlbTuiGuangOther;
+	}
 	@Override
 	public String toString() {
 		return "Record [id=" + id + ", storePhone=" + storePhone
@@ -573,7 +583,8 @@ public class Record  implements Serializable{
 				+ ", finance=" + finance + ", financeDate=" + financeDate
 				+ ", storeName=" + storeName + ", storeNo=" + storeNo
 				+ ", handlerName=" + handlerName + ", handlerDate="
-				+ handlerDate + ", wlbTuiGuang=" + wlbTuiGuang + ", wlbSign="
+				+ handlerDate + ", wlbTuiGuang=" + wlbTuiGuang
+				+ ", wlbTuiGuangOther=" + wlbTuiGuangOther + ", wlbSign="
 				+ wlbSign + ", wlbSignDate=" + wlbSignDate + ", gbuInt="
 				+ gbuInt + ", gbuIntDate=" + gbuIntDate
 				+ ", operationsDirector=" + operationsDirector
@@ -581,6 +592,7 @@ public class Record  implements Serializable{
 				+ ", createDate=" + createDate + ", modifyDate=" + modifyDate
 				+ "]";
 	}
+	
 	
 	
 
