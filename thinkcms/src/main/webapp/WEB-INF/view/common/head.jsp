@@ -14,7 +14,6 @@
 <link rel="stylesheet" type="text/css"
 	href='<c:url value="/static/css/admin.css"/>'>
 	<link rel="shortcut icon" type="image/x-icon" href='<c:url value="/static/image/favicon.ico" />' />  
-
 <script type="text/javascript"
 	src="<c:url value="/static/js/jquery.min.js"/>"></script>
 <script type="text/javascript"
@@ -24,3 +23,8 @@
 	src="<c:url value="/static/js/layer/layer.js"/>"></script>
 <script type="text/javascript"
 	src="<c:url value="/static/plugin/My97DatePicker/WdatePicker.js"/>"></script>
+	<script type="text/javascript"
+	src="<c:url value="/static/js/jquery.validate-1.13.1.js"/>"></script>
+	<script type="text/javascript"
+	src="<c:url value="/static/js/insertcheck.js"/>"></script>
+	

@@ -35,5 +35,7 @@
 	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/报价系统相关/poi-ooxml-3.9-20121203.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/报价系统相关/poi-ooxml-schemas-3.9-beta1-20120924.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/报价系统相关/poi-scratchpad-3.9-beta1-20120924.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/sdk-java-2016-06-07/taobao-sdk-java-auto_1455552377940-20160607.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/sdk-java-2016-06-07/taobao-sdk-java-auto_1455552377940-20160607-source.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

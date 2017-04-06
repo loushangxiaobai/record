@@ -251,7 +251,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <p class=MsoNormal style='line-height:100%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span lang=EN-US style='font-family:黑体'><input type="text" style="width: 550px;" name="storeAddr" id="storeAddr"><o:p>&nbsp;</o:p></span></p>
+  exactly'><span lang=EN-US style='font-family:黑体'><input type="text" style="width: 562px;" name="storeAddr" id="storeAddr"><o:p>&nbsp;</o:p></span></p>
   </td>
  </tr>
  <tr style='mso-yfti-irow:2'>
@@ -302,14 +302,14 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'>门店法人姓名：<span lang=EN-US><o:p></o:p></span></span></p>
   </td>
-  <td width=130 colspan=4 valign=middle style='width:97.25pt;border-top:none;
+  <td width=130 colspan=4 valign="bottom" style='width:97.25pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
   <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span lang=EN-US style='font-family:黑体'><input type="text" name="legalName" id="legalName" style="width: 100px"  ><o:p>&nbsp;</o:p></span></p>
+  exactly'><span lang=EN-US style='font-family:黑体'><input type="text" name="legalName" id="legalName" style="margin-bottom: -20px;"   ><o:p>&nbsp;</o:p></span></p>
   </td>
   <td width=84 colspan=3 valign=top style='width:63.1pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -384,7 +384,7 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   <p class=MsoNormal style='line-height:150%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span lang=EN-US style='font-family:黑体'><input type="text"  name="QQ" id="QQ"><o:p>&nbsp;</o:p></span></p>
+  exactly'><span lang=EN-US style='font-family:黑体'><input type="text"  name="QQ" id="QQ" style="width: 172px;"><o:p>&nbsp;</o:p></span></p>
   </td>
  </tr>
  <tr style='mso-yfti-irow:5'>
@@ -977,14 +977,14 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   column;mso-element-top:.05pt;mso-height-rule:exactly'><span style='font-family:
   黑体'>网络部<span lang=EN-US><o:p></o:p></span></span></p>
   </td>
-  <td width=143 colspan=2 valign=top style='width:107.15pt;border-top:none;
+  <td width=143 colspan=2 valign="middle" style='width:107.15pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:2.0cm'>
   <p class=MsoNormal style='line-height:115%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span style='font-family:黑体'>网络部推广配对<span lang=EN-US><o:p></o:p></span></span></p>
+  exactly'><span style='font-family:黑体;text-align: center;margin-left: 100px;' >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 网络部推广配对<span lang=EN-US><o:p></o:p></span></span></p>
   </td> 
    <td width=536 colspan=12 valign=top style='width:401.9pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
@@ -1168,31 +1168,39 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
 
 </div>
 		<%@ include file="/WEB-INF/view/common/footer.jsp"%>
+		<%@ include file="/WEB-INF/view/common/head.jsp"%>
 	</div>
 </body>
 <script type="text/javascript">
 		function submitDo() {
 			var data = $("#form").serialize();
-			data = decodeURIComponent(data, true);
-			$.ajax({
-				url : "record/add",
-				data : data,
-				method : 'post',
-				contentType : 'application/x-www-form-urlencoded',
-				encoding : 'UTF-8',
-				cache : false,
-				success : function(result) {
-					if (result.success) {
-						layer.msg('保存成功');
-						setTimeout("closeWindow()", 1000);
-					} else {
-						layer.msg('保存失败');
+		  var flag = checkfrom();
+		  if(flag==true){
+			  data = decodeURIComponent(data, true);
+				$.ajax({
+					url : "record/add",
+					data : data,
+					method : 'post',
+					contentType : 'application/x-www-form-urlencoded',
+					encoding : 'UTF-8',
+					cache : false,
+					success : function(result) {
+						if (result.success) {
+							layer.msg('保存成功');
+							setTimeout("closeWindow()", 1000);
+						} else {
+							layer.msg('保存失败');
+						}
+					},
+					error : function() {
+						layer.msg('系统异常');
 					}
-				},
-				error : function() {
-					layer.msg('系统异常');
-				}
-			});
+				});
+		  }
+		  else{
+		  layer.msg('信息不完整！！');
+		  }
+			 
 		}
 		function changeRMB(money,inputId) {
 			var inputid="#"+inputId;
@@ -1226,4 +1234,208 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
 		
 		
 	</script>
+	<script type="text/javascript">
+	function checkfrom(){
+	  var ok= true;
+		if($("#storePhone").val() ==""){
+			layer.msg('请输入门店电话！');
+			ok=false;
+		}
+		
+		if($("#openTime").val() ==""){
+			layer.msg('请输入开业时间！');
+			ok=false;
+		}
+		
+		if($("#storeAddr").val() ==""){
+			layer.msg('请输入门店地址！');
+			ok=false;
+		}
+		
+		
+		if($("#jwd").val() ==""){
+			layer.msg('请输入经纬度坐标！');
+			ok=false;
+		}
+		
+		if($("#businessStart").val() ==""){
+			layer.msg('请输入营业时间！');
+			ok=false;
+		}
+		if($("#businessEnd").val() ==""){
+			layer.msg('请输入营业时间！');
+			ok=false;
+		}
+		if($("#legalName").val() ==""){
+			layer.msg('请输入门店法人姓名！');
+			ok=false;
+		}
+		
+		if($("#mobilePhone").val() ==""){
+			layer.msg('请输入手机号码！');
+			ok=false;
+		}
+		
+		if($("#weChat").val() ==""){
+			layer.msg('请输入微信号！');
+			ok=false;
+		}
+		if($("#email").val() ==""){
+			layer.msg('请输入邮箱地址！');
+			ok=false;
+		}
+		
+		if($("#QQ").val() ==""){
+			layer.msg('请输入QQ！');
+			ok=false;
+		}
+		
+		if($("#storePersonName").val() ==""){
+			layer.msg('请输入门店店长姓名！');
+			ok=false;
+		}
+		
+		if($("#storePersonPhone").val() ==""){
+			layer.msg('请输入门店店长手机号码！');
+			ok=false;
+		}
+		if($("#storePersonWechat").val() ==""){
+			layer.msg('请输入门店店长微信号！');
+			ok=false;
+		}
+		if($("#storeType").val() ==""){
+			layer.msg('请选择门店类型！');
+			ok=false;
+		}
+		if($("#engineerNum").val() ==""){
+			layer.msg('请输入工程师人数！');
+			ok=false;
+		}
+		if($("#isOtherPt").val() ==""){
+			layer.msg('请确认是否使用其他订单平台！');
+			ok=false;
+		}
+		if($("#contractDateline").val() ==""){
+			layer.msg('请输入合同期限！');
+			ok=false;
+		}
+		
+		if($("#contractStart").val() ==""){
+			layer.msg('请输入起止日期！');
+			ok=false;
+		}
+		
+		if($("#contractEnd").val() ==""){
+			layer.msg('请输入起止日期！');
+			ok=false;
+		}
+		
+		if($("#cooperationModel").val() ==""){
+			layer.msg('请选择合作模式！');
+			ok=false;
+		}
+		if($("#joinCostSmall").val() ==""){
+			layer.msg('请输入加盟费用！');
+			ok=false;
+		}
+		if($("#joinAssureSmall").val() ==""){
+			layer.msg('请输入加盟保证金！');
+			ok=false;
+		}
+		if($("#heuoxieyiUrl").val() ==""){
+			layer.msg('请上传加盟商合作协议书！');
+			ok=false;
+		}
+		if($("#shoujuUrl").val() ==""){
+			layer.msg('请上传收据！');
+			ok=false;
+		}
+		if($("#idCardUrl").val() ==""){
+			layer.msg('请上传法人身份证正反面！');
+			ok=false;
+		}
+		if($("#idCardInHandUrl").val() ==""){
+			layer.msg('请上传法人手持身份证照片正反面！');
+			ok=false;
+		}
+		if($("#engineerUrl").val() ==""){
+			layer.msg('请上传维修工程师登记表！');
+			ok=false;
+		}
+		if($("#storeImage").val() ==""){
+			layer.msg('请上传门店高清横屏照片！');
+			ok=false;
+		}
+		if($("#filialeSubmitPerson").val() ==""){
+			layer.msg('请输入分公司提交人！');
+			ok=false;
+		}
+		if($("#submitDate").val() ==""){
+			layer.msg('请输入提交日期！');
+			ok=false;
+		}
+		if($("#filialePrincipal").val() ==""){
+			layer.msg('请输入分公司负责人！');
+			ok=false;
+		}
+		if($("#filialePrincipalDate").val() ==""){
+			layer.msg('请输入签署日期！');
+			ok=false;
+		}
+		if($("#finance").val() ==""){
+			layer.msg('请输入财务部审核人！');
+			ok=false;
+		}
+		if($("#financeDate").val() ==""){
+			layer.msg('请输入审核日期！');
+			ok=false;
+		}
+		if($("#storeName").val() ==""){
+			layer.msg('请输入门店名称！');
+			ok=false;
+		}
+		if($("#storeNo").val() ==""){
+			layer.msg('请输入门店编码！');
+			ok=false;
+		}
+		if($("#handlerName").val() ==""){
+			layer.msg('请输入经手人！');
+			ok=false;
+		}
+		if($("#handlerDate").val() ==""){
+			layer.msg('请输入签署日期！');
+			ok=false;
+		}
+		if($("#wlbSign").val() ==""){
+			layer.msg('请输入网络部签署人！');
+			ok=false;
+		}
+		if($("#wlbSignDate").val() ==""){
+			layer.msg('请输入网络部签署日期！');
+			ok=false;
+		}
+		if($("#gbuInt").val() ==""){
+			layer.msg('请输入运营助理！');
+			ok=false;
+		}
+		if($("#gbuIntDate").val() ==""){
+			layer.msg('请输入运营助理签署日期！');
+			ok=false;
+		}
+		if($("#operationsDirector").val() ==""){
+			layer.msg('请输入运营部负责人！');
+			ok=false;
+		}
+		if($("#operationsDirectorDate").val() ==""){
+			layer.msg('请输入运营部负责人签署日期！');
+			ok=false;
+		}
+	
+		return ok;
+	}
+	
+	
+	
+	</script>
+	
 </html>

@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<%@ include file="/WEB-INF/view/common/head.jsp"%>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -131,7 +133,7 @@
 					    <dl class="layui-nav-item">
 					    	<c:forEach items="${menu.childList }" var="item">
 					<c:if test="${item.childList!=null }">
-						<li class="admin-parent">
+						<li class="layui-nav-item">
 						<shiro:hasPermission name="${item.permission }">
 							<a class="am-cf" data-am-collapse="{target: '#collapse-nav${item.id }'}">
 							 <span class="${item.icon }"></span> ${item.description } 
@@ -219,10 +221,10 @@
 	</div>
 </div>
 <!-- 菜单控件 -->
-<!-- <div class="larry-tab-menu">
+ <div class="larry-tab-menu">
 	<span class="layui-btn larry-test">刷新</span>
-</div> -->
+</div> 
 <!-- iframe框架刷新操作 -->
-<!-- <div id="refresh_iframe" class="layui-btn refresh_iframe">刷新</div> -->
+ <div id="refresh_iframe" class="layui-btn refresh_iframe">刷新</div> 
 </body>
 </html>
