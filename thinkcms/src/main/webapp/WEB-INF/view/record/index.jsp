@@ -34,19 +34,33 @@
 							</div>
 						</div>
 					</div>
-					<!-- <div class="am-u-sm-12 am-u-md-3">
+					
+		 <div id="distpicker5" style="height: 30px;margin-left: -200px;margin-bottom: -60px;">
+        <div  style="float: left;height: 30px; width: 100px;">
+          <select  id="province10" name="province" onchange="query()"></select>
+        </div>
+        <div style="float: left;height: 30px;margin-left:52px;">
+          <select  id="city10" style="margin-left: 5px;" name="city"></select>
+        </div>
+        <div style="float: left;height: 30px;margin-left: 5px;">
+          <select id="district10" name="district"></select>
+      
+						</div>
+					</div> 
+					<div class="am-u-sm-12 am-u-md-3" style="float: left;margin-left: 75%;">
 						<div class="am-input-group am-input-group-sm">
-							<input type="text" class="am-form-field" id="description" name="description" placeholder="角色名称模糊查询">
+							<input type="text" class="am-form-field" id="description" name="description" placeholder="门店名称模糊查询">
 							<span class="am-input-group-btn">
 								<button class="am-btn am-btn-default" type="button" onclick="query()">搜索</button>
 							</span>
 						</div>
-					</div> -->
+					</div> 
 				</form>
 			</div>
 			<div id="list" class="am-g"></div>
 		</div>
 		<%@ include file="/WEB-INF/view/common/footer.jsp"%>
+		<%@ include file="/WEB-INF/view/common/head.jsp"%>
 	</div>
 	<!-- content end -->
 	<script type="text/javascript">
@@ -54,6 +68,29 @@
 			query();
 		});
 		function query(pageNo,pageSize) {
+			$.ajax({
+						url : 'record/list',
+						type : 'post',
+						data : {
+							/* description:$("#description10").val(), */
+							province:$("#province10").val(),
+							city:$("#city10").val(),
+							district:$("#distric10").val(),
+							pageNo:pageNo,
+							pageSize:pageSize
+						},
+						cache : false,
+						contentType : "application/x-www-form-urlencoded; charset=utf-8",
+						success : function(html) {
+							$('#list').html(html);
+						},
+						error : function() {
+							layer.msg('系统异常');
+						}
+					});
+		}
+		
+		/* function queryByString(pageNo,pageSize) {
 			$.ajax({
 						url : 'record/list',
 						type : 'post',
@@ -71,7 +108,10 @@
 							layer.msg('系统异常');
 						}
 					});
-		}
+		} */
+		
+		
+		
 		function del(id) {
 			if (!id) {
 				id = "";
@@ -155,6 +195,13 @@
 		
 		
 		
+	</script>
+	<script type="text/javascript">
+	
+	$("#distpicker5").distpicker({
+		  autoSelect: false
+		});
+	
 	</script>
 </body>
 </html>

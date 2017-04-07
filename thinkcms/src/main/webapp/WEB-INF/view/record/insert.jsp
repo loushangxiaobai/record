@@ -244,14 +244,27 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span style='font-family:黑体'>门店详细地址：<span lang=EN-US><o:p></o:p></span></span></p>
   </td>
-  <td width=567 colspan=13 valign=middle style='width:15.0cm;border-top:none;
+  <td width=567 colspan=13 valign=middle style='width:15.0cm;border-top:none;height:0.2cm;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
   mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal style='line-height:100%;mso-element:frame;mso-element-frame-hspace:
+  <p class=MsoNormal style='line-height:80%;mso-element:frame;mso-element-frame-hspace:
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
-  exactly'><span lang=EN-US style='font-family:黑体'><input type="text" style="width: 562px;" name="storeAddr" id="storeAddr"><o:p>&nbsp;</o:p></span></p>
+  exactly'><span lang=EN-US style='font-family:黑体'>
+  
+   <div id="distpicker5" style="height: 30px;margin-top: 5px;">
+        <div  style="float: left;height: 30px; width: 100px;">
+          <select  id="province10" name="province"></select>
+        </div>
+        <div style="float: left;height: 30px;margin-left:52px;">
+          <select  id="city10" style="margin-left: 5px;" name="city"></select>
+        </div>
+        <div style="float: left;height: 30px;margin-left: 5px;">
+          <select id="district10" name="district"></select>
+        </div>
+      </div>
+   <input type="text" style="width: 600px; margin-left: -26px;" name="storeAddr" id="storeAddr"> <o:p>&nbsp;</o:p></span></p>
   </td>
  </tr>
  <tr style='mso-yfti-irow:2'>
@@ -1434,7 +1447,13 @@ lang=EN-US>·</span>新开门店备案表<span lang=EN-US><o:p></o:p></span></sp
 		return ok;
 	}
 	
+	</script>
 	
+	<script type="text/javascript">
+	
+	$("#distpicker5").distpicker({
+		  autoSelect: false
+		});
 	
 	</script>
 	

@@ -34,6 +34,15 @@ public class Record  implements Serializable{
 	//预计开业时间
 	@Column(name = "openTime")
 	private String openTime;
+	//省
+	@Column(name = "province")
+	private String province;
+	//市
+	@Column(name = "city")
+	private String city;
+	//区
+	@Column(name = "district")
+	private String district;
 	//门店详细地址
 	@Column(name = "storeAddr")
 	private String storeAddr;
@@ -553,15 +562,36 @@ public class Record  implements Serializable{
 	public void setWlbTuiGuangOther(String wlbTuiGuangOther) {
 		this.wlbTuiGuangOther = wlbTuiGuangOther;
 	}
+	
+	public String getProvince() {
+		return province;
+	}
+	public void setProvince(String province) {
+		this.province = province;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getDistrict() {
+		return district;
+	}
+	public void setDistrict(String district) {
+		this.district = district;
+	}
 	@Override
 	public String toString() {
 		return "Record [id=" + id + ", storePhone=" + storePhone
-				+ ", openTime=" + openTime + ", storeAddr=" + storeAddr
-				+ ", jwd=" + jwd + ", businessStart=" + businessStart
-				+ ", businessEnd=" + businessEnd + ", legalName=" + legalName
-				+ ", mobilePhone=" + mobilePhone + ", weChat=" + weChat
-				+ ", email=" + email + ", QQ=" + QQ + ", storePersonName="
-				+ storePersonName + ", storePersonPhone=" + storePersonPhone
+				+ ", openTime=" + openTime + ", province=" + province
+				+ ", city=" + city + ", district=" + district + ", storeAddr="
+				+ storeAddr + ", jwd=" + jwd + ", businessStart="
+				+ businessStart + ", businessEnd=" + businessEnd
+				+ ", legalName=" + legalName + ", mobilePhone=" + mobilePhone
+				+ ", weChat=" + weChat + ", email=" + email + ", QQ=" + QQ
+				+ ", storePersonName=" + storePersonName
+				+ ", storePersonPhone=" + storePersonPhone
 				+ ", storePersonWechat=" + storePersonWechat + ", storeType="
 				+ storeType + ", engineerNum=" + engineerNum
 				+ ", appendixAddr=" + appendixAddr + ", xsPingTai=" + xsPingTai

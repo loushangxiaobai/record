@@ -182,7 +182,7 @@ normal;margin-left: 100px;'><span lang=EN-US style='font-size:14.0pt;mso-bidi-fo
 font-family:黑体'>1</span></b><b style='mso-bidi-font-weight:normal'><span
 style='font-size:14.0pt;mso-bidi-font-size:11.0pt;font-family:黑体'>小时项目<span
 lang=EN-US>·</span >新开门店备案表<span lang=EN-US><o:p></o:p></span></span></b> </p>
-<div id="tablediv"  style="width: 100%;height: 80%;">
+<div id="tablediv"  style="width: 100%;height: 70%;">
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 align=left
  style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
  mso-table-overlap:never;mso-yfti-tbllook:1184;mso-table-lspace:9.0pt;
@@ -257,7 +257,7 @@ lang=EN-US>·</span >新开门店备案表<span lang=EN-US><o:p></o:p></span></s
   9.0pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-element-top:.05pt;mso-height-rule:
   exactly'><span lang=EN-US style='font-family:黑体'>
-  <span>${entity.storeAddr }</span>
+  <span>${entity.province }${entity.city }${entity.district}${entity.storeAddr }</span>
   <o:p>&nbsp;</o:p></span></p>
   </td>
  </tr>

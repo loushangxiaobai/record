@@ -76,7 +76,7 @@
 						<td class="am-text-middle">${item.id }</td>
 						<td class="am-text-middle">${item.storePhone }</td>
 						<td class="am-text-middle">${item.openTime }</td>
-						<td class="am-text-middle">${item.storeAddr }</td>
+						<td class="am-text-middle">${item.province }${item.city }${item.district } ${item.storeAddr }</td>
 						<td class="am-text-middle">${item.jwd }</td>
 						<td class="am-text-middle">${item.businessStart }</td>
 						<td class="am-text-middle">${item.businessEnd }</td>

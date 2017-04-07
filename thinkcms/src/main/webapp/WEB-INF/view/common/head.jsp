@@ -27,4 +27,10 @@
 	src="<c:url value="/static/js/jquery.validate-1.13.1.js"/>"></script>
 	<script type="text/javascript"
 	src="<c:url value="/static/js/insertcheck.js"/>"></script>
+	<script type="text/javascript"
+	src="<c:url value="/static/js/region_select.js"/>"></script>
+	<script type="text/javascript"
+	src="<c:url value="/static/js/distpicker.data.js"/>"></script>
+	<script type="text/javascript"
+	src="<c:url value="/static/js/distpicker.js"/>"></script>
 	

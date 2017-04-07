@@ -34,7 +34,7 @@ public class RecordDaoImpl extends BaseDao implements RecordDao{
 			dc.add(Restrictions.eq("categoryId", categoryId));
 		}
 		if (title != null) {
-			dc.add(Restrictions.like("title", title, MatchMode.ANYWHERE));
+			dc.add(Restrictions.like("province", title, MatchMode.ANYWHERE));
 		}
 		if (tag != null) {
 			dc.add(Restrictions.like("tag", title, MatchMode.ANYWHERE));
