@@ -69,4 +69,17 @@
 		class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
 		<property name="securityManager" ref="securityManager" />
 	</bean>
+	<!-- 邮件配置  -->
+	<!-- <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">  
+        <property name="host" value="smtp.qq.com" />
+        <property name="port" value="25" />
+        <property name="username" value="qinmeicheng@01hour.cn" />
+        <property name="password" value="WXXqmc555555" />  
+        <property name="javaMailProperties">
+             <props>
+                 <prop key="mail.smtp.auth">true</prop>
+             </props>
+        </property> 
+    </bean>   -->
+	
 </beans>

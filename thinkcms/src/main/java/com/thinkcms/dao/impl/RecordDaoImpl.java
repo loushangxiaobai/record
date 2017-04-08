@@ -27,20 +27,20 @@ public class RecordDaoImpl extends BaseDao implements RecordDao{
 	}
 
 	@Override
-	public PageDto<Record> findList(Long categoryId, String title, String tag,
-			String remark, Integer pageNo, Integer pageSize) {
+	public PageDto<Record> findList(String province, String title, String district,
+			String city, Integer pageNo, Integer pageSize) {
 		DetachedCriteria dc = DetachedCriteria.forClass(Record.class);
-		if (categoryId != null) {
-			dc.add(Restrictions.eq("categoryId", categoryId));
+		if (province != null && province.length()>0) {
+			dc.add(Restrictions.eq("province", province));
 		}
 		if (title != null) {
 			dc.add(Restrictions.like("province", title, MatchMode.ANYWHERE));
 		}
-		if (tag != null) {
-			dc.add(Restrictions.like("tag", title, MatchMode.ANYWHERE));
+		if (district != null && district.length()>0) {
+			dc.add(Restrictions.like("district", district, MatchMode.ANYWHERE));
 		}
-		if (remark != null) {
-			dc.add(Restrictions.like("remark", title, MatchMode.ANYWHERE));
+		if (city != null && city.length()>0) {
+			dc.add(Restrictions.like("city", city, MatchMode.ANYWHERE));
 		}
 		dc.addOrder(Order.desc("createDate"));
 		/* 一定先取count值 */

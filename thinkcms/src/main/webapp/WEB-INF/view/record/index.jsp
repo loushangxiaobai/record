@@ -28,6 +28,10 @@
 									<span class="am-icon-plus"></span> 导出
 								</button>
 								<button type="button" class="am-btn am-btn-default"
+									onclick="sendemail();">
+									<span class="am-icon-plus"></span> 发送邮件
+								</button>
+								<button type="button" class="am-btn am-btn-default"
 									onClick="del();">
 									<span class="am-icon-trash-o"></span> 删除
 								</button>
@@ -40,10 +44,10 @@
           <select  id="province10" name="province" onchange="query()"></select>
         </div>
         <div style="float: left;height: 30px;margin-left:52px;">
-          <select  id="city10" style="margin-left: 5px;" name="city"></select>
+          <select  id="city10" style="margin-left: 5px;" name="city" onchange="query()"></select>
         </div>
         <div style="float: left;height: 30px;margin-left: 5px;">
-          <select id="district10" name="district"></select>
+          <select id="district10" name="district" onchange="query()"></select>
       
 						</div>
 					</div> 
@@ -75,7 +79,7 @@
 							/* description:$("#description10").val(), */
 							province:$("#province10").val(),
 							city:$("#city10").val(),
-							district:$("#distric10").val(),
+							district:$("#district10").val(),
 							pageNo:pageNo,
 							pageSize:pageSize
 						},
@@ -155,6 +159,42 @@
 				});//end layer.msg
 			
 		}
+		
+		function sendemail(id) {
+			 if (!id) {
+				id = "";
+				$("[name='checkitem'][checked]").each(function(index) {
+					id += $(this).val();
+					if (index < $("[name='checkitem'][checked]").length - 1) {
+						id += ",";
+					}
+				});
+				if(id.length<1){
+					layer.msg("请选择要删除的选项");
+					return;
+				}
+			} 
+			 $.ajax({
+					url : 'record/findEmail',
+					type : 'post',
+					data : {
+						ids : id
+					},
+					cache : false,
+					contentType : "application/x-www-form-urlencoded; charset=utf-8",
+					success : function(data) {
+						alert(data);
+						if (data) {
+							query();
+						} else {
+							layer.msg('请选择接收人');
+						}
+					},
+					error : function() {
+						layer.msg('系统异常');
+					}
+				});//end aja
+		} 
 		function selectAll() {
 			$('input:checkbox').prop("checked",
 					document.getElementById("checkAll").checked);

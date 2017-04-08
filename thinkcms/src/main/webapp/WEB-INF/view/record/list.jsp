@@ -9,6 +9,7 @@
 					<th class="table-check"><input type="checkbox" id="checkAll" onclick="selectAll();" /></th>
 					<th class="table-id">ID</th>
 					<th class="table-title">门店电话</th>
+					<th class="table-set" >发送短信</th>
 					<th class="table-title">预计开业时间</th>
 					<th class="table-date am-hide-sm-only">门店详细地址</th>
 					<th class="table-date am-hide-sm-only">经纬度</th>
@@ -64,7 +65,7 @@
 					<th class="table-date am-hide-sm-only">运营部负责人签署日期</th> 
 					<th class="table-set" >编辑</th>
 					<th class="table-set" >打印</th>
-					<th class="table-set" >发送短信</th>
+					
 					<th class="table-set" >删除</th>
 					
 				</tr>
@@ -75,6 +76,18 @@
 						<td class="am-text-middle"><input type="checkbox" name="checkitem" onclick="selectItem(this);" id="check${item.id }" value="${item.id }"/></td>
 						<td class="am-text-middle">${item.id }</td>
 						<td class="am-text-middle">${item.storePhone }</td>
+						<td class="am-text-middle">
+						
+						<div class="am-btn-toolbar">
+								<div class="am-btn-group am-btn-group-xs">
+						<button type="button" class="am-btn am-btn-default am-text-secondary"
+										onclick="openWindow('record/sendMessage?phone=${item.storePersonPhone}','短信编辑');" style="float: left;">
+										<span class="am-icon-pencil-square-o"></span> 发送短信
+									</button>
+										</div>
+							</div>
+									</td>
+					
 						<td class="am-text-middle">${item.openTime }</td>
 						<td class="am-text-middle">${item.province }${item.city }${item.district } ${item.storeAddr }</td>
 						<td class="am-text-middle">${item.jwd }</td>
@@ -163,17 +176,6 @@
 								</div>
 							</div>
 						</td>
-						<td>
-						
-						<div class="am-btn-toolbar">
-								<div class="am-btn-group am-btn-group-xs">
-						<button type="button" class="am-btn am-btn-default am-text-secondary"
-										onclick="openWindow('record/sendMessage?phone=${item.storePersonPhone}','短信编辑');" style="float: left;">
-										<span class="am-icon-pencil-square-o"></span> 发送短信
-									</button>
-										</div>
-							</div>
-									</td>
 						<td>
 						<div class="am-btn-toolbar">
 								<div class="am-btn-group am-btn-group-xs">

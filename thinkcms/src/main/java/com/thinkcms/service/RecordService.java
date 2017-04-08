@@ -13,7 +13,7 @@ import com.thinkcms.support.PageDto;
 public interface RecordService {
    public Record saveOrUpdate(Record record);
    
-   public PageDto<Record> findList(Long categoryId,String title, String tag, String remark,
+   public PageDto<Record> findList(String province,String title, String district, String city,
 			Integer pageNo, Integer pageSize);
    
    public void del(Integer id);

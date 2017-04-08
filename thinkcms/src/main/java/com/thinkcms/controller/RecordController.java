@@ -36,6 +36,7 @@ import com.thinkcms.support.NumberToCN;
 import com.thinkcms.support.ReqDto;
 import com.thinkcms.support.Result;
 import com.thinkcms.support.SMSUtil;
+import com.thinkcms.support.SendEmaliUtil;
 
 @Controller
 @RequestMapping("/record")
@@ -51,12 +52,12 @@ public class RecordController {
 	
 	@RequiresPermissions({ "record/list" })
 	@RequestMapping(value = "/list", method = RequestMethod.POST)
-	public String list(Long categoryId, String title, String tag,
-			String remark, ReqDto req, Model model) {
+	public String list(String province, String title, String district,
+			String city, ReqDto req, Model model) {
 		try {
 			model.addAttribute(
 					"list",
-					recordService.findList(categoryId, title, tag, remark,
+					recordService.findList(province, title, district, city,
 							req.getPageNo(), req.getPageSize()));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -170,7 +171,6 @@ public class RecordController {
 		return new Result(true, record);
 	}
 	
-	
 	@RequiresPermissions({ "record/export" })
 	@ResponseBody
 	@RequestMapping(value = "/export", method = RequestMethod.GET)
@@ -237,6 +237,41 @@ public class RecordController {
 				return "common/error";
 			}
 			return "record/print";
+		}
+	    
+	    @RequiresPermissions({ "record/add" })
+		@ResponseBody
+		@RequestMapping(value = "/sendEmail", method = RequestMethod.POST)
+		public Object sendEmail(String toEmails,Record record,Model model,HttpServletRequest request) {
+			try {
+				recordService.saveOrUpdate(record);
+				SendEmaliUtil emaliUtil = new SendEmaliUtil();
+			  boolean ok=emaliUtil.sendEmail(null, null, null, null, null);
+			} catch (Exception e) {
+				e.printStackTrace();
+				return new Result(false, e);
+			}
+			return new Result(true, record);
+		}
+	    
+	    @RequiresPermissions({ "record/add" })
+		@ResponseBody
+		@RequestMapping(value = "/findEmail", method = RequestMethod.POST)
+		public Object findEmail(String ids,Record record,Model model,HttpServletRequest request) {
+	    	String emailAddrs="";
+	    	try {
+				List<Record> list= recordService.findById(ids);
+				
+				for(int i=0;i<list.size();i++){
+					emailAddrs+=list.get(i).getEmail()+",";
+				}
+				emailAddrs=emailAddrs.substring(0, emailAddrs.length()-1);
+				System.out.println(emailAddrs);
+			} catch (Exception e) {
+				e.printStackTrace();
+				return new Result(false, e);
+			}
+			return emailAddrs;
 		}
 	    
 	    

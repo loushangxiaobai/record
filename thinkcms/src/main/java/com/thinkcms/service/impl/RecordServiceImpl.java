@@ -26,9 +26,9 @@ public class RecordServiceImpl implements RecordService{
 	}
 	
 	@Transactional
-	public PageDto<Record> findList(Long categoryId,String title,String tag,String remark, Integer pageNo,
+	public PageDto<Record> findList(String province,String title,String district,String city, Integer pageNo,
 			Integer pageSize) {
-		return recordDao.findList(categoryId,title,tag,remark, pageNo, pageSize);
+		return recordDao.findList(province,title,district,city, pageNo, pageSize);
 	}
 
 	@Transactional
